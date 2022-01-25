@@ -1,5 +1,3 @@
-import java.lang.reflect.AnnotatedElement;
-
 import processing.core.PApplet;
 
 public class Sketch1 extends PApplet {
@@ -83,12 +81,5 @@ public class Sketch1 extends PApplet {
   // Game
   
   
- 
   }
-
-
-
-  private void arc(Object fill) {
-  }
-  
 }
