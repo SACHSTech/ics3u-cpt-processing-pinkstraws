@@ -15,6 +15,10 @@ public class Sketch2 extends PApplet {
   float[] snowPile;
   float snowHeight = height;
 
+  // Background Settings
+  boolean pback = false;
+  boolean gback = false;
+  
 
   public void setup() {
     background(0, 0, 0);
@@ -42,23 +46,24 @@ public class Sketch2 extends PApplet {
         snowPile[i] += (width / 90);
       }
     }
+    
     // Start Button
     fill(255, 255, 255);
     rect(225, 100, 300 , 75);
 
     // How To Play Sign
     fill(50);
-    textSize(50);
-    text(" How To Play ", 220, 155);
+    textSize(40);
+    text("Press e to play", 240, 150);
 
     // How To Play Button
     fill(255, 255, 255);
-    rect(275, 200, 200, 75);
+    rect(225, 200, 300, 75);
 
     // Play Sign
     fill(50);
-    textSize(50);
-    text("Play", 330, 255);
+    textSize(28);
+    text("Press i for instructions", 235, 252);
 
     // Extreme
     fill(194, 25, 25);
@@ -88,5 +93,27 @@ public class Sketch2 extends PApplet {
     rect(680, 270, 90, 30);
     rect(680, 100, 30, 200);
 
+    if(pback == true){
+      background(172, 58, 224);
+    }
+
+    if (gback == true){
+      background(130, 230, 80);
+    }
+    
+  }
+  public void keyPressed(){
+    
+    // Menu Toggling
+    if(key == 'e'){
+      pback = true;
+    }
+    if(key == 'i'){
+      gback = true;
+    }
+    if(key == 'm'){
+      gback = false;
+      pback = false;
+    }
   }
 }
