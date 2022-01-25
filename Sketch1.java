@@ -6,10 +6,12 @@ public class Sketch1 extends PApplet {
 	
   public void settings() {
     size(800, 450);
-  }
 
+  // Background Settings
   
-
+ 
+  }
+  
   public void setup() {
     background(0);
   }
@@ -73,13 +75,14 @@ public class Sketch1 extends PApplet {
   fill(255, 42, 38);
   textSize(50);
   text("__", 575, 200);
+
+  
   
   // Choose your character
   
 
 
   // Game
-
  
   
 
