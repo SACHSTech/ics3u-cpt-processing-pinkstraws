@@ -93,15 +93,28 @@ public class Sketch2 extends PApplet {
     rect(680, 270, 90, 30);
     rect(680, 100, 30, 200);
 
-    textSize(90);
-    text("I LOVE JOSH", 200, 200);
-
     if(pback == true){
       background(172, 58, 224);
     }
 
     if (gback == true){
       background(130, 230, 80);
+      // Instruction Title
+      fill(0);
+      textSize(50);
+      text("Instructions", 250, 75);
+      // Instructions
+      fill(0);
+      textSize(30);
+      text("Hold 'w' to move forward", 30, 150);
+      text("Hold 's' to move backward", 30, 190);
+      text("Hold 'a' to move left", 30, 230);
+      text("Hold 'd' to move left", 30, 270);
+      text("Go to the right colour to ", 400, 150);
+      text("move onto the next level ", 400, 190);
+      text("If you don't move fast enough,", 400, 230);
+      text("you will die!", 400, 270);
+
     }
     
   }
@@ -113,6 +126,10 @@ public class Sketch2 extends PApplet {
     }
     if(key == 'i'){
       gback = true;
+      
+
+
+
     }
     if(key == 'm'){
       gback = false;
