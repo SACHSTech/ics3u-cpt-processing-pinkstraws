@@ -93,6 +93,9 @@ public class Sketch2 extends PApplet {
     rect(680, 270, 90, 30);
     rect(680, 100, 30, 200);
 
+    textSize(90);
+    text("I LOVE JOSH", 200, 200);
+
     if(pback == true){
       background(172, 58, 224);
     }
