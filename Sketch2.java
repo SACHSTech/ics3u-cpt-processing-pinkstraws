@@ -33,7 +33,7 @@ public class Sketch2 extends PApplet {
   
 
   public void setup() {
-    menuScreen = true;
+    Level2OP = true;
     background(0, 0, 0);
 
     snowY = new float [width];
