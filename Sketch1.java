@@ -4,6 +4,11 @@ public class Sketch1 extends PApplet {
 
   // Rachel's page
 	
+  public boolean mClicked = false; 
+  public boolean upPressed = false;
+  public boolean leftPressed = false; 
+  public boolean rightPressed = false;
+
   public void settings() {
     size(800, 450);
 
@@ -19,8 +24,12 @@ public class Sketch1 extends PApplet {
   public void draw() {
   
   fill(255);
-  textSize(40);
-  text("Left click to choose a character!", 130, 400);
+  textSize(30);
+  text("1. Click the arrow on your keyboard to choose one!", 10, 400);
+
+  fill(255);
+  textSize(30);
+  text("2. Then click anywhere to proceed!", 10, 430);
 
   // Character #1
   fill(49, 181, 222);
@@ -40,6 +49,10 @@ public class Sketch1 extends PApplet {
   textSize(75);
   text("~", 180, 230);
 
+  fill(255);
+  textSize(50);
+  text("<-", 190, 310);
+
   // Character #2
   fill(255, 143, 205);
   ellipse(width/2, height/3,  width/5, height/2);
@@ -57,6 +70,11 @@ public class Sketch1 extends PApplet {
   fill(255, 42, 38);
   textSize(50);
   text("O", 400, 230);
+
+  fill(255);
+  textSize(50);
+  text("^", 390, 310);
+  text("|", 395, 310);
 
   // Character #3
   fill(183, 74, 255);
@@ -76,12 +94,57 @@ public class Sketch1 extends PApplet {
   textSize(50);
   text("__", 575, 200);
 
-  
+  fill(255);
+  textSize(50);
+  text("->", 590, 310);
   
   // Choose your character
+  if (mClicked) {
+    background (0);
+    
+    // Level One
+    fill(66, 245, 173);
+    textSize(40);
+    text("Yellow", 350, 50);
+    
+    rect(50, 100, 300, 300);
+
+    fill(255, 224, 110);
+    rect(450, 100, 300, 300);
+
+
+  }
+
+<<<<<<< HEAD
+
+  
   
 
+  
+  
 
+  // Define other methods
+  
+
+  }
+  public void mouseClicked() {
+    mClicked = true;
+    }
+  
+  public void keyPressed(){
+      if(keyCode == LEFT){
+          leftPressed = true;
+      }
+      else if(keyCode == UP){
+        upPressed = true;
+      }
+      else if(keyCode == RIGHT) {
+        rightPressed = true;
+      }
+    }
+  }
+
+=======
   // Game
   }
 }
@@ -90,3 +153,4 @@ public class Sketch1 extends PApplet {
 
   
   
+>>>>>>> 65887ff827d6f62a8f3217d5302da27db9c4453f
