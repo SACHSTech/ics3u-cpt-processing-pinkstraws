@@ -15,19 +15,25 @@ public class Sketch2 extends PApplet {
   float[] snowPile;
   float snowHeight = height;
 
-  // Background Settings
-  boolean pback = false;
-  boolean gback = false;
-
-  // Time Settings
-  int time;
-  int wait = 5;
-  int tick;
-
-  // Correct Answers Settings
+  // Screens
+  boolean menuScreen;
+  boolean instructionScreen;
+  boolean gameoverScreen;
+  boolean Level1OP;
+  boolean Level1;
+  boolean Level2OP;
+  boolean Level2;
+  boolean Level3OP;
+  boolean Level3;
+  boolean Level4OP;
+  boolean Level4;
+  boolean Level5OP;
+  boolean Level5;
+  boolean youwinScreen;
   
 
   public void setup() {
+    menuScreen = true;
     background(0, 0, 0);
 
     snowY = new float [width];
@@ -36,14 +42,53 @@ public class Sketch2 extends PApplet {
     for(int i = 0; i < snowY.length; i++){
       snowY[i] = random(0, height);
     }
-
-    // Time unit
-    time = millis();
-    tick = time - 1;
-
   }
 
   public void draw() {
+    if(menuScreen){
+      menuScreen();
+    }
+    else if(instructionScreen){
+      instructionScreen();
+    }
+    else if(Level1OP){
+      Level1OP();
+    }
+    else if(Level1){
+      Level1();
+    }
+    else if(gameoverScreen){
+      gameoverScreen();
+    }
+    else if(Level2OP){
+      Level2OP();
+    }
+    else if(Level2){
+      Level2();
+    }
+    else if(Level3OP){
+      Level3OP();
+    }
+    else if(Level3){
+      Level3();
+    }
+    else if(Level4OP){
+      Level4OP();
+    }
+    else if(Level4){
+      Level4();
+    }
+    else if(Level5OP){
+      Level5OP();
+    }
+    else if(youwinScreen){
+      youwinScreen();
+    }
+    
+
+    }
+  
+  public void menuScreen(){
     // Snow Falling Down
     background(0);
     fill(75);
@@ -105,94 +150,138 @@ public class Sketch2 extends PApplet {
     rect(680, 270, 90, 30);
     rect(680, 100, 30, 200);
 
-    if(pback == true){
-      background(172, 58, 224);
-
-      // Level 1
-      fill(0);
-      textSize(75);
-      text("Level 1:", 300, 155);
-      text("Get Passed Evil", 150, 305);
-      text("Loli's Minions!", 200, 375);
-      
-      if(key == 'p'){
-        background(79, 10, 10);
-
-        
-        // Colour Option
-        fill(255);
-        textSize(50);
-        text("Blue", 350, 100);
-
-        // Time Settings
-        if(millis() - time >= wait){
-          fill(255);
-          text(time, 10, 50);; //if it is, do something
-          time = 5; //also update the stored time
-        }
-
-        // Box 1: White
-        fill(255);
-        rect(150, 150, 150, 150);
-        fill(0);
-        textSize(30);
-        text("Left Click", 165, 200);
-
-        // Box 2: Blue
-        fill(19, 21, 143);
-        rect(500, 150, 150, 150);
-        fill(0);
-        textSize(30);
-        text("Right Click", 505, 200);
-
-          if(mousePressed && (mouseButton == LEFT)){
-            background(0);
-          }
-          else if(mouseButton == RIGHT){
-            background(0);
-            fill(55);
-            textSize(70);
-            text("Game Over", 400, 400);
-          }
-        }
-      }
-
-    if (gback == true){
-      background(130, 230, 80);
-
-      // Instruction Title
-      fill(0);
-      textSize(50);
-      text("Instructions", 250, 75);
-
-      // Instructions
-      fill(0);
-      textSize(30);
-      text("Use your left click to", 30, 150);
-      text("choose the right tile", 30, 190);
-      text("Click the right colour to ", 30, 250);
-      text("move onto the next level ", 30, 290);
-      text("If you don't move fast enough,", 400, 150);
-      text("you will die!", 400, 190);
-      text("Click p to start the game", 400, 250);
-      text("Press 'm' to go back to", 200, 350);
-      text("the main menu at any time", 200, 390);
-    }
-    
-  }
-
-  public void keyPressed(){
-    
-    // Menu Toggling
     if(key == 'e'){
-      pback = true;
+      menuScreen = false;
+      Level1OP = true;
     }
     if(key == 'i'){
-      gback = true;
-    }
+      menuScreen = false;
+      instructionScreen = true;
+      }
+  }
+
+  public void instructionScreen(){
+    background(130, 230, 80);
+    // Instruction Title
+    fill(0);
+    textSize(50);
+    text("Instructions", 250, 75);
+
+    // Instructions
+    fill(0);
+    textSize(30);
+    text("Click your mouse button", 30, 150);
+    text("to choose the right colour", 30, 190);
+    text("Click the right colour to ", 30, 250);
+    text("move onto the next level ", 30, 290);
+    text("If you don't move fast enough,", 400, 150);
+    text("you will die!", 400, 190);
+    text("Click p to start the game", 400, 250);
+    text("Press 'm' to go back to", 200, 350);
+    text("the main menu at any time", 200, 390);
+    
     if(key == 'm'){
-      gback = false;
-      pback = false;
+      instructionScreen = false;
+      menuScreen = true;
+      }
+  }
+  
+  public void gameoverScreen(){
+    background(0);
+    fill(255);
+    textSize(70);
+    text("Game Over", 210, 200);
+    textSize(30);
+    text("Press 'm' to go back to menu", 200, 400);
+    if(key == 'm'){
+      gameoverScreen = false;
+      menuScreen = true;
     }
   }
+
+  public void Level1OP(){
+    background(255);
+    // Level 1 Opening Page
+    fill(0);
+    textSize(75);
+    text("Level 1:", 255, 155);
+    text("Get Passed Evil", 150, 305);
+    text("Loli's Minions!", 200, 375);
+    if(key == 'p'){
+      Level1OP = false;
+      Level1 = true;
+    }
+  }
+
+  public void Level1(){
+    background(133, 21, 21);
+    // Colour Chosen
+    fill(255);
+    textSize(70);
+    text("Blue", 340, 100);
+
+    // Box 1: White
+    fill(255);
+    rect(150, 150, 150, 150);
+    if(mouseX > 150 && mouseY > 150 && mouseX < 300 && mouseY < 300 && mousePressed){
+      gameoverScreen = true;
+      Level1 = false;
+    }
+
+    // Box 2: Blue
+    fill(19, 21, 143);
+    rect(500, 150, 150, 150);
+    if(mouseX > 500 && mouseY > 150 && mouseX < 650 && mouseY < 300 && mousePressed){
+      Level2OP = true;
+      Level1 = false;
+    }
+  }
+
+  public void Level2OP(){     // Rachel
+
+
+  background(255);
+  // Level 2 Opening Page
+  fill(0);
+  textSize(75);
+  text("Level 2:", 250, 155);
+  text("Defeat More Minions!", 50, 305);
+  if(key == 'p'){
+    Level2OP = false;
+    Level2 = true;
+}
+}
+
+  public void Level2(){     // Rachel
+
+  }
+
+public void Level3OP(){
+
+}
+
+public void Level3(){
+
+}
+
+public void Level4OP(){  // Rachel
+
+}
+
+public void Level4(){  // Rachel
+
+}
+
+public void Level5OP(){
+
+}
+
+public void Level5(){
+
+}
+
+public void youwinScreen(){ // Rachel
+
+}
+
 }

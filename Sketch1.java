@@ -141,13 +141,4 @@ public class Sketch1 extends PApplet {
         rightPressed = true;
       }
     }
-  
-
-  // Game
   }
-
- 
-  
-
-  
-  
