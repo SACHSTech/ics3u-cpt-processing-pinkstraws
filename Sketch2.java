@@ -33,7 +33,7 @@ public class Sketch2 extends PApplet {
   
 
   public void setup() {
-    menuScreen = true;
+    Level3OP = true;
     background(0, 0, 0);
 
     snowY = new float [width];
@@ -253,30 +253,92 @@ public class Sketch2 extends PApplet {
 }
 
   public void Level2(){     // Rachel
-
+    if(key == 'p'){
+      Level2 = false;
+      Level3OP = true;
+    }
   }
 
 public void Level3OP(){
+  background(255);
+  // Level 3 Opening Page
+  fill(0);
+  textSize(75);
+  text("Level 3:", 250, 155);
+  text("Defeat Mini Boss!", 50, 305);
+  if(key == 'p'){
+    Level3OP = false;
+    Level3 = true;
+  }
 
 }
 
 public void Level3(){
+  background(74, 47, 47);
+    // Colour Chosen
+    fill(53, 2, 54);
+    textSize(70);
+    text("pink", 340, 100);
 
+    // Box 1: Black
+    fill(0);
+    rect(50, 200, 150, 150);
+    if(mouseX > 150 && mouseY > 150 && mouseX < 300 && mouseY < 300 && mousePressed){
+      gameoverScreen = true;
+      Level1 = false;
+    }
+
+    // Box 2: Pink
+    fill(239, 75, 242);
+    rect(325, 200, 150, 150);
+    if(mouseX > 500 && mouseY > 150 && mouseX < 650 && mouseY < 300 && mousePressed){
+      Level2OP = true;
+      Level1 = false;
+    }
+
+    // Box 3: Purple
+    fill(53, 2, 54);
+    rect(600, 200, 150, 150);
+    if(mouseX > 500 && mouseY > 150 && mouseX < 650 && mouseY < 300 && mousePressed){
+      Level2OP = true;
+      Level1 = false;
+    }
 }
 
 public void Level4OP(){  // Rachel
+  if(key == 'p'){
+    Level4OP = false;
+    Level4 = true;
+  }
 
 }
 
 public void Level4(){  // Rachel
+  if(key == 'p'){
+    Level4 = false;
+    Level5OP = true;
+  }
 
 }
 
 public void Level5OP(){
-
+  background(255);
+  // Level 5 Opening Page
+  fill(0);
+  textSize(75);
+  text("Final Level:", 250, 155);
+  text("Defeat Evil Loli!", 50, 305);
+  if(key == 'p'){
+    Level5OP = false;
+    Level5 = true;
+  }
 }
 
 public void Level5(){
+  if(key == 'p'){
+    Level5 = false;
+    youwinScreen = true;
+  }
 
 }
 
