@@ -33,7 +33,7 @@ public class Sketch2 extends PApplet {
   
 
   public void setup() {
-    Level3OP = true;
+    menuScreen = true;
     background(0, 0, 0);
 
     snowY = new float [width];
@@ -66,11 +66,17 @@ public class Sketch2 extends PApplet {
     else if(Level2){
       Level2();
     }
+    else if(gameoverScreen){
+      gameoverScreen();
+    }
     else if(Level3OP){
       Level3OP();
     }
     else if(Level3){
       Level3();
+    }
+    else if(gameoverScreen){
+      gameoverScreen();
     }
     else if(Level4OP){
       Level4OP();
@@ -78,8 +84,14 @@ public class Sketch2 extends PApplet {
     else if(Level4){
       Level4();
     }
+    else if(gameoverScreen){
+      gameoverScreen();
+    }
     else if(Level5OP){
       Level5OP();
+    }
+    else if(gameoverScreen){
+      gameoverScreen();
     }
     else if(youwinScreen){
       youwinScreen();
@@ -283,7 +295,7 @@ public void Level3(){
     // Box 1: Black
     fill(0);
     rect(50, 200, 150, 150);
-    if(mouseX > 150 && mouseY > 150 && mouseX < 300 && mouseY < 300 && mousePressed){
+    if(mouseX > 50 && mouseY > 200 && mouseX < 200 && mouseY < 200 && mousePressed){
       gameoverScreen = true;
       Level1 = false;
     }
@@ -291,7 +303,7 @@ public void Level3(){
     // Box 2: Pink
     fill(239, 75, 242);
     rect(325, 200, 150, 150);
-    if(mouseX > 500 && mouseY > 150 && mouseX < 650 && mouseY < 300 && mousePressed){
+    if(mouseX > 325 && mouseY > 200 && mouseX < 475 && mouseY < 350 && mousePressed){
       Level2OP = true;
       Level1 = false;
     }
@@ -299,8 +311,8 @@ public void Level3(){
     // Box 3: Purple
     fill(53, 2, 54);
     rect(600, 200, 150, 150);
-    if(mouseX > 500 && mouseY > 150 && mouseX < 650 && mouseY < 300 && mousePressed){
-      Level2OP = true;
+    if(mouseX > 600 && mouseY > 200 && mouseX < 750 && mouseY < 350 && mousePressed){
+      gameoverScreen = true;
       Level1 = false;
     }
 }
