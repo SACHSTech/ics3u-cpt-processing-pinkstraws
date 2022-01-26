@@ -2,12 +2,17 @@ import processing.core.PApplet;
 
 public class Sketch1 extends PApplet {
 
+
+
   // Rachel's page
 	
   public boolean mClicked = false; 
+  public boolean mDragged = false;
+  public boolean mWheel = false;
   public boolean upPressed = false;
   public boolean leftPressed = false; 
   public boolean rightPressed = false;
+  public boolean shiftPressed = false;
 
   public void settings() {
     size(800, 450);
@@ -99,9 +104,11 @@ public class Sketch1 extends PApplet {
   text("->", 590, 310);
   
   // Choose your character
+
   if (mClicked) {
     background (0);
-    
+    // somehow add for loop
+
     // Level One
     fill(66, 245, 173);
     textSize(40);
@@ -112,42 +119,62 @@ public class Sketch1 extends PApplet {
     fill(255, 224, 110);
     rect(450, 100, 300, 300);
 
+    if(mWheel) {
+      background(0);
+      fill(55);
+      textSize(70);
+      text("Level 2!", 275, 225);
 
+      // Add one point to score board
+    }
+    if(mDragged){
+        background(0);
+        fill(55);
+        textSize(70);
+        text("Game Over", 400, 400);
+
+        fill(55);
+        textSize(40);
+        text("Press your shift key to restart the game!", 30, 225);
+
+        if(shiftPressed) {
+
+        }
+    
+
+      }
+    }
   }
-
-
-  
-  
-
-  
-  
 
   // Define other methods
   
-
-  }
   public void mouseClicked() {
     mClicked = true;
-    }
+  }
+
+  public void mouseDragged() {
+    mDragged = true;
+  }
+
+  public void mouseWheel() {
+    mWheel = true;
+  }
   
   public void keyPressed(){
       if(keyCode == LEFT){
           leftPressed = true;
       }
-      else if(keyCode == UP){
+      else if(keyCode == UP){ 
         upPressed = true;
       }
       else if(keyCode == RIGHT) {
         rightPressed = true;
       }
+
+      if(keyCode == SHIFT){
+
+        
+      }
+
     }
-  
-
-  // Game
   }
-
- 
-  
-
-  
-  
