@@ -18,6 +18,13 @@ public class Sketch2 extends PApplet {
   // Background Settings
   boolean pback = false;
   boolean gback = false;
+
+  // Time Settings
+  int time;
+  int wait = 5;
+  int tick;
+
+  // Correct Answers Settings
   
 
   public void setup() {
@@ -29,6 +36,11 @@ public class Sketch2 extends PApplet {
     for(int i = 0; i < snowY.length; i++){
       snowY[i] = random(0, height);
     }
+
+    // Time unit
+    time = millis();
+    tick = time - 1;
+
   }
 
   public void draw() {
@@ -63,7 +75,7 @@ public class Sketch2 extends PApplet {
     // Play Sign
     fill(50);
     textSize(28);
-    text("Press i for instructions", 235, 252);
+    text("Press i for instructions", 235, 250);
 
     // Extreme
     fill(194, 25, 25);
@@ -95,29 +107,80 @@ public class Sketch2 extends PApplet {
 
     if(pback == true){
       background(172, 58, 224);
-    }
+
+      // Level 1
+      fill(0);
+      textSize(75);
+      text("Level 1:", 300, 155);
+      text("Get Passed Evil", 150, 305);
+      text("Loli's Minions!", 200, 375);
+      
+      if(key == 'p'){
+        background(79, 10, 10);
+
+        
+        // Colour Option
+        fill(255);
+        textSize(50);
+        text("Blue", 350, 100);
+
+        // Time Settings
+        if(millis() - time >= wait){
+          fill(255);
+          text(time, 10, 50);; //if it is, do something
+          time = 5; //also update the stored time
+        }
+
+        // Box 1: White
+        fill(255);
+        rect(150, 150, 150, 150);
+        fill(0);
+        textSize(30);
+        text("Left Click", 165, 200);
+
+        // Box 2: Blue
+        fill(19, 21, 143);
+        rect(500, 150, 150, 150);
+        fill(0);
+        textSize(30);
+        text("Right Click", 505, 200);
+
+          if(mousePressed && (mouseButton == LEFT)){
+            background(0);
+          }
+          else if(mouseButton == RIGHT){
+            background(0);
+            fill(55);
+            textSize(70);
+            text("Game Over", 400, 400);
+          }
+        }
+      }
 
     if (gback == true){
       background(130, 230, 80);
+
       // Instruction Title
       fill(0);
       textSize(50);
       text("Instructions", 250, 75);
+
       // Instructions
       fill(0);
       textSize(30);
-      text("Hold 'w' to move forward", 30, 150);
-      text("Hold 's' to move backward", 30, 190);
-      text("Hold 'a' to move left", 30, 230);
-      text("Hold 'd' to move left", 30, 270);
-      text("Go to the right colour to ", 400, 150);
-      text("move onto the next level ", 400, 190);
-      text("If you don't move fast enough,", 400, 230);
-      text("you will die!", 400, 270);
-
+      text("Use your left click to", 30, 150);
+      text("choose the right tile", 30, 190);
+      text("Click the right colour to ", 30, 250);
+      text("move onto the next level ", 30, 290);
+      text("If you don't move fast enough,", 400, 150);
+      text("you will die!", 400, 190);
+      text("Click p to start the game", 400, 250);
+      text("Press 'm' to go back to", 200, 350);
+      text("the main menu at any time", 200, 390);
     }
     
   }
+
   public void keyPressed(){
     
     // Menu Toggling
@@ -126,10 +189,6 @@ public class Sketch2 extends PApplet {
     }
     if(key == 'i'){
       gback = true;
-      
-
-
-
     }
     if(key == 'm'){
       gback = false;
