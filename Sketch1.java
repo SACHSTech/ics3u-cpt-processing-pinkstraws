@@ -171,6 +171,19 @@ public class Sketch1 extends PApplet {
     // box 2
       fill(140, 255, 0);
       rect(300, 100, 200, 200);
+<<<<<<< Updated upstream
+=======
+    // correct box 3
+      fill(255, 224, 110);
+      rect(550, 100, 200, 200);
+
+     
+      if(mouseX > 50 && mouseY > 100 && mouseX <150 && mouseY < 200 && mousePressed)
+      {
+        gameOverScreen();
+      }
+      
+>>>>>>> Stashed changes
       if(mouseX > 300 && mouseY > 100 && mouseX < 500 && mouseY < 300 && mousePressed)
       {
         gameOverScreen = true;
