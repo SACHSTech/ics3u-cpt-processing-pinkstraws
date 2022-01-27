@@ -4,11 +4,6 @@ public class Sketch1 extends PApplet {
 
   // Rachel's page
 
-  // Input boolean
-    boolean mClicked = false;
-    boolean mPressed = false;
-    boolean mReleased = false;
-
   // Frame booleans
     boolean minionScreen;
     boolean gameOverScreen;
@@ -46,7 +41,7 @@ public class Sketch1 extends PApplet {
     }
     else if(levelFour)
     {
-      levelFour(mouseX <= 550);
+      levelFour();
     }
     else if(levelFiveOP)
     {
@@ -133,26 +128,13 @@ public class Sketch1 extends PApplet {
     text("__", 575, 200);
 
    // Enter Game
-   if (mClicked) 
+   if (mouseX < width && mouseY < height && mousePressed)
     {
-      background(0);
-      levelFourOP();
+      levelFourOP = true;
+      minionScreen = false;
     }
    }
   
-  public void mouseClicked() 
-    {
-      mClicked = true;
-    }
-
-  public void mousePressed()
-  {
-    mPressed = true;
-  }
-  public void mouseReleased()
-  {
-    mReleased = true;
-  }
 
   public void levelFourOP()
   {
@@ -168,41 +150,31 @@ public class Sketch1 extends PApplet {
     {
       if(key == 'o')
       {
-      levelFour(mouseX <= 550);
+      levelFour();
       }
     }
   }
-  public void levelFour(boolean b)
+  public void levelFour()
   {
     background(0);
     fill(66, 245, 173);
     textSize(40);
     text("Yellow", 345, 50);
-   
     
     // box 1
       rect(50, 100, 200, 200);
+      if(mouseX > 50 && mouseY > 100 && mouseX <250 && mouseY < 300 && mousePressed)
+      { 
+        gameOverScreen = true;
+        levelFour = false;
+      }
     // box 2
       fill(140, 255, 0);
       rect(300, 100, 200, 200);
-    // correct box 3
-      fill(255, 224, 110);
-      rect(550, 100, 200, 200);
-
-     
-      if(mouseX > 50 && mouseY > 100 && mouseX <150 && mouseY < 200 && mClicked)
-      {
-        gameOverScreen();
-      }
-      
       if(mouseX > 300 && mouseY > 100 && mouseX < 500 && mouseY < 300 && mousePressed)
       {
-        gameOverScreen();
-      }
-      
-      if(mouseX > 550 && mouseY > 100 && mouseX < 750 && mouseY < 300 && mousePressed)
-      {
-        levelFiveOP();
+        gameOverScreen = true;
+        levelFour = false;
       }
     }
   
