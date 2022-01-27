@@ -24,7 +24,7 @@ public class Sketch2 extends PApplet {
   boolean Level4;
   boolean Level5OP;
   boolean Level5;
-  boolean youwinScreen;
+  boolean endScreen;
 
   // Scoreboard
 
@@ -71,8 +71,8 @@ public class Sketch2 extends PApplet {
     else if(Level3){
       Level3();
     }
-    else if (youwinScreen){
-      youwinScreen();
+    else if (endScreen){
+      endScreen();
     }
     else if(gameoverScreen){
       gameoverScreen();
@@ -432,7 +432,7 @@ public class Sketch2 extends PApplet {
     fill(239, 75, 242);
     rect(325, 200, 150, 150);
     if(mouseX > 325 && mouseY > 200 && mouseX < 475 && mouseY < 350 && mousePressed){
-      youwinScreen = true;
+      endScreen = true;
       Level3 = false;
       int timeBonus = ((20000 / millis()) * 10);
       points = points + 10 + timeBonus;
@@ -449,18 +449,26 @@ public class Sketch2 extends PApplet {
     text("Points: " + points, 10, 30);
   }
 
-  public void youwinScreen(){
+  public void endScreen(){
     background(0);
     fill(255);
-    if(points > 100){
+    if(points >= 100){
       textSize(50);
-      text("You Win!" , 200, 200);
-      text("Your score was: " + points, 100, 300);
+      text("You Win!" , 200, 100);
+      text("Your score was: " + points, 100, 150);
+      text("Thank you for", 100, 300);
+      text("saving the world", 100, 350);
+      text("from the evil Loli", 100, 400);
+
     }
     else if(points < 100){
+      fill(255);
       textSize(50);
-      text("You Lose!" , 200, 200);
-      text("Your score was: " + points, 100, 300);
+      text("You Lose!" , 200, 100);
+      text("Your score was: " + points, 100, 150);
+      text("The Evil Loli", 100, 300);
+      text("has taken over", 100, 350);
+      text("the world!", 100, 400);
     }
   }
 }
