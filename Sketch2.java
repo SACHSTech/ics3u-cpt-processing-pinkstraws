@@ -57,17 +57,11 @@ public class Sketch2 extends PApplet {
     else if(Level1){
       Level1();
     }
-    else if(gameoverScreen){
-      gameoverScreen();
-    }
     else if(Level2OP){
       Level2OP();
     }
     else if(Level2){
       Level2();
-    }
-    else if(gameoverScreen){
-      gameoverScreen();
     }
     else if(Level3OP){
       Level3OP();
@@ -75,28 +69,24 @@ public class Sketch2 extends PApplet {
     else if(Level3){
       Level3();
     }
-    else if(gameoverScreen){
-      gameoverScreen();
-    }
+/*
     else if(Level4OP){
       Level4OP();
     }
     else if(Level4){
       Level4();
     }
-    else if(gameoverScreen){
-      gameoverScreen();
-    }
     else if(Level5OP){
       Level5OP();
     }
-    else if(gameoverScreen){
-      gameoverScreen();
-    }
+    
     else if(youwinScreen){
       youwinScreen();
     }
-    
+    */
+    else if(gameoverScreen){
+      gameoverScreen();
+    }
 
     }
   
@@ -220,13 +210,13 @@ public class Sketch2 extends PApplet {
     text("Get Passed Evil", 150, 305);
     text("Loli's Minions!", 200, 375);
     if(key == 'p'){
-      Level1OP = false;
       Level1 = true;
+      Level1OP = false;
     }
   }
 
   public void Level1(){
-    background(133, 21, 21);
+    background(0);
     // Colour Chosen
     fill(255);
     textSize(70);
@@ -249,9 +239,7 @@ public class Sketch2 extends PApplet {
     }
   }
 
-  public void Level2OP(){     // Rachel
-
-
+  public void Level2OP(){  
   background(255);
   // Level 2 Opening Page
   fill(0);
@@ -259,19 +247,36 @@ public class Sketch2 extends PApplet {
   text("Level 2:", 250, 155);
   text("Defeat More Minions!", 50, 305);
   if(key == 'p'){
-    Level2OP = false;
     Level2 = true;
-}
+    Level2OP = false;
+  }
 }
 
-  public void Level2(){     // Rachel
-    if(key == 'p'){
-      Level2 = false;
+  public void Level2(){
+    background(255);
+    // Colour Chosen
+    fill(255, 119, 0);
+    textSize(70);
+    text("Orange", 340, 100);
+
+    // Box 1: Orange - Correct
+    fill(255, 119, 0);
+    rect(150, 150, 150, 150);
+    if(mouseX > 150 && mouseY > 150 && mouseX < 300 && mouseY < 300 && mousePressed){
       Level3OP = true;
+      Level2 = false;
+    }
+
+    // Box 2: Yellow - Wrong
+    fill(255, 215, 84);
+    rect(500, 150, 150, 150);
+    if(mouseX > 500 && mouseY > 150 && mouseX < 650 && mouseY < 300 && mousePressed){
+      gameoverScreen = true;
+      Level2 = false;
     }
   }
 
-public void Level3OP(){
+  public void Level3OP(){
   background(255);
   // Level 3 Opening Page
   fill(0);
@@ -285,7 +290,7 @@ public void Level3OP(){
 
 }
 
-public void Level3(){
+  public void Level3(){
   background(74, 47, 47);
     // Colour Chosen
     fill(53, 2, 54);
@@ -295,17 +300,17 @@ public void Level3(){
     // Box 1: Black
     fill(0);
     rect(50, 200, 150, 150);
-    if(mouseX > 50 && mouseY > 200 && mouseX < 200 && mouseY < 200 && mousePressed){
+    if(mouseX > 50 && mouseY > 200 && mouseX < 200 && mouseY < 350 && mousePressed){
       gameoverScreen = true;
-      Level1 = false;
+      Level3 = false;
     }
 
     // Box 2: Pink
     fill(239, 75, 242);
     rect(325, 200, 150, 150);
     if(mouseX > 325 && mouseY > 200 && mouseX < 475 && mouseY < 350 && mousePressed){
-      Level2OP = true;
-      Level1 = false;
+      Level4OP = true;
+      Level3 = false;
     }
 
     // Box 3: Purple
@@ -313,11 +318,11 @@ public void Level3(){
     rect(600, 200, 150, 150);
     if(mouseX > 600 && mouseY > 200 && mouseX < 750 && mouseY < 350 && mousePressed){
       gameoverScreen = true;
-      Level1 = false;
+      Level3 = false;
     }
 }
-
-public void Level4OP(){  // Rachel
+/*
+  public void Level4OP(){  // Rachel
   if(key == 'p'){
     Level4OP = false;
     Level4 = true;
@@ -325,7 +330,7 @@ public void Level4OP(){  // Rachel
 
 }
 
-public void Level4(){  // Rachel
+  public void Level4(){  // Rachel
   if(key == 'p'){
     Level4 = false;
     Level5OP = true;
@@ -333,7 +338,7 @@ public void Level4(){  // Rachel
 
 }
 
-public void Level5OP(){
+  public void Level5OP(){  // Rachel
   background(255);
   // Level 5 Opening Page
   fill(0);
@@ -346,7 +351,7 @@ public void Level5OP(){
   }
 }
 
-public void Level5(){
+  public void Level5(){ // Rachel
   if(key == 'p'){
     Level5 = false;
     youwinScreen = true;
@@ -354,8 +359,8 @@ public void Level5(){
 
 }
 
-public void youwinScreen(){ // Rachel
+  public void youwinScreen(){ // Rachel
 
 }
-
+*/
 }
