@@ -14,6 +14,9 @@ public class Sketch1 extends PApplet {
   public boolean rightPressed = false;
   public boolean shiftPressed = false;
 
+  boolean gameOverScreen;
+  boolean levelTwo;
+
   public void settings() {
     size(800, 450);
 
@@ -30,11 +33,11 @@ public class Sketch1 extends PApplet {
   
   fill(255);
   textSize(30);
-  text("1. Click the arrow on your keyboard to choose one!", 10, 400);
+  text("Loli's Evil Minions", 10, 400);
 
   fill(255);
   textSize(30);
-  text("2. Then click anywhere to proceed!", 10, 430);
+  text("Click anywhere to begin!", 10, 430);
 
   // Character #1
   fill(49, 181, 222);
@@ -54,10 +57,6 @@ public class Sketch1 extends PApplet {
   textSize(75);
   text("~", 180, 230);
 
-  fill(255);
-  textSize(50);
-  text("<-", 190, 310);
-
   // Character #2
   fill(255, 143, 205);
   ellipse(width/2, height/3,  width/5, height/2);
@@ -76,11 +75,6 @@ public class Sketch1 extends PApplet {
   textSize(50);
   text("O", 400, 230);
 
-  fill(255);
-  textSize(50);
-  text("^", 390, 310);
-  text("|", 395, 310);
-
   // Character #3
   fill(183, 74, 255);
   ellipse(600, height/3, width/5, height/2);
@@ -98,25 +92,31 @@ public class Sketch1 extends PApplet {
   fill(255, 42, 38);
   textSize(50);
   text("__", 575, 200);
-
-  fill(255);
-  textSize(50);
-  text("->", 590, 310);
   
   // Choose your character
 
   if (mClicked) {
     background (0);
-    // somehow add for loop
-
+    //  fill(255);
+  
     // Level One
     fill(66, 245, 173);
     textSize(40);
     text("Yellow", 350, 50);
     
     rect(50, 100, 300, 300);
-
+    
     fill(255, 224, 110);
+    rect(450, 100, 300, 300);
+
+    // Level Two
+    fill(252, 3, 157);
+    textSize(40);
+    text("Red", 350, 50);
+
+    rect(50, 100, 300, 300);
+
+    fill(252, 3, 3);
     rect(450, 100, 300, 300);
 
     if(mWheel) {
@@ -140,11 +140,47 @@ public class Sketch1 extends PApplet {
         if(shiftPressed) {
 
         }
-    
+        
+        // You win screen
+        background(0);
 
-      }
     }
   }
+  // You win screen
+  background(0);
+  drawFlower(random(width), random(height), random(20, 55));
+}
+  
+void drawFlower(float flowerX, float flowerY, float petalSize) {
+  float petalDistance = petalSize / 2;
+
+  fill(255, 128, 0);
+
+  // upper-left petal
+  ellipse(flowerX - petalDistance, flowerY - petalDistance, 
+    petalSize, petalSize);
+
+  // upper-right petal
+  ellipse(flowerX + petalDistance, flowerY - petalDistance, 
+    petalSize, petalSize);
+
+  // lower-left petal
+  ellipse(flowerX - petalDistance, flowerY + petalDistance, 
+    petalSize, petalSize);
+
+  // lower-right petal
+  ellipse(flowerX + petalDistance, flowerY + petalDistance, 
+    petalSize, petalSize);
+
+  // center petal
+  fill(255, 0, 0);
+  ellipse(flowerX, flowerY, 
+    petalSize, petalSize);
+  
+  fill(255);
+  textSize(100);
+  text("You win!", 200, 250);
+}
 
   // Define other methods
   
