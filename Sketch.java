@@ -25,6 +25,8 @@ public class Sketch extends PApplet {
   boolean Level5;
   boolean youwinScreen;
 
+  // Rachles booleans go under here
+
   public void settings() {
     size(800, 450);
   }
@@ -271,6 +273,8 @@ public class Sketch extends PApplet {
     }
   }
 
+  // Rachels Avatar page goes here
+  
   public void Level1OP(){
   background(255);
   // Level 1 Opening Page
@@ -405,4 +409,6 @@ public class Sketch extends PApplet {
       Level3 = false;
     }
   }
+  
+  // Rachels Levels + Win Screen goes here
 }
