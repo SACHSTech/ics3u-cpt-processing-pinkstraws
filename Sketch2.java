@@ -3,11 +3,6 @@ import processing.core.PApplet;
 public class Sketch2 extends PApplet {
 	
 	// Romuel's Page
-
-  public void settings() {
-    size(800, 450);
-  }
-
   // Snow Settings
   float[] snowY;
   float speed = 1;
@@ -30,7 +25,10 @@ public class Sketch2 extends PApplet {
   boolean Level5OP;
   boolean Level5;
   boolean youwinScreen;
-  
+
+  public void settings() {
+    size(800, 450);
+  }
 
   public void setup() {
     menuScreen = true;
@@ -57,17 +55,11 @@ public class Sketch2 extends PApplet {
     else if(Level1){
       Level1();
     }
-    else if(gameoverScreen){
-      gameoverScreen();
-    }
     else if(Level2OP){
       Level2OP();
     }
     else if(Level2){
       Level2();
-    }
-    else if(gameoverScreen){
-      gameoverScreen();
     }
     else if(Level3OP){
       Level3OP();
@@ -78,27 +70,7 @@ public class Sketch2 extends PApplet {
     else if(gameoverScreen){
       gameoverScreen();
     }
-    else if(Level4OP){
-      Level4OP();
-    }
-    else if(Level4){
-      Level4();
-    }
-    else if(gameoverScreen){
-      gameoverScreen();
-    }
-    else if(Level5OP){
-      Level5OP();
-    }
-    else if(gameoverScreen){
-      gameoverScreen();
-    }
-    else if(youwinScreen){
-      youwinScreen();
-    }
-    
-
-    }
+  }
   
   public void menuScreen(){
     // Snow Falling Down
@@ -173,7 +145,7 @@ public class Sketch2 extends PApplet {
   }
 
   public void instructionScreen(){
-    background(130, 230, 80);
+    background(255, 158, 158);
     // Instruction Title
     fill(0);
     textSize(50);
@@ -188,9 +160,8 @@ public class Sketch2 extends PApplet {
     text("move onto the next level ", 30, 290);
     text("If you don't move fast enough,", 400, 150);
     text("you will die!", 400, 190);
-    text("Click p to start the game", 400, 250);
-    text("Press 'm' to go back to", 200, 350);
-    text("the main menu at any time", 200, 390);
+    text("Press 'm' to go back to", 400, 250);
+    text("the main menu at any time", 400, 290);
     
     if(key == 'm'){
       instructionScreen = false;
@@ -212,100 +183,129 @@ public class Sketch2 extends PApplet {
   }
 
   public void Level1OP(){
-    background(255);
-    // Level 1 Opening Page
-    fill(0);
-    textSize(75);
-    text("Level 1:", 255, 155);
-    text("Get Passed Evil", 150, 305);
-    text("Loli's Minions!", 200, 375);
-    if(key == 'p'){
-      Level1OP = false;
-      Level1 = true;
+  background(255);
+  // Level 1 Opening Page
+  fill(0);
+  textSize(75);
+  text("Level 1:", 255, 155);
+  text("Get Passed Evil", 120, 255);
+  text("Loli's Minions!", 160, 325);
+
+  // Ready Phrase
+  fill(0);
+  textSize(30);
+  text("press 'p' when ready!", 500, 430);
+  if(key == 'p'){
+    Level1 = true;
+    Level1OP = false;
     }
   }
 
   public void Level1(){
-    background(133, 21, 21);
+    background(0);
     // Colour Chosen
     fill(255);
     textSize(70);
-    text("Blue", 340, 100);
+    text("Blue", 330, 100);
 
-    // Box 1: White
-    fill(255);
-    rect(150, 150, 150, 150);
-    if(mouseX > 150 && mouseY > 150 && mouseX < 300 && mouseY < 300 && mousePressed){
-      gameoverScreen = true;
+    // Box 1: Blue
+    fill(19, 21, 143);
+    rect(150, 200, 150, 150);
+    if(mouseX > 150 && mouseY > 200 && mouseX < 300 && mouseY < 350 && mousePressed){
+      Level2OP = true;
       Level1 = false;
     }
 
-    // Box 2: Blue
-    fill(19, 21, 143);
-    rect(500, 150, 150, 150);
-    if(mouseX > 500 && mouseY > 150 && mouseX < 650 && mouseY < 300 && mousePressed){
-      Level2OP = true;
+    // Box 2: White
+    fill(255);
+    rect(500, 200, 150, 150);
+    if(mouseX > 500 && mouseY > 150 && mouseX < 650 && mouseY < 350 && mousePressed){
+      gameoverScreen = true;
       Level1 = false;
     }
   }
 
-  public void Level2OP(){     // Rachel
-
-
+  public void Level2OP(){  
   background(255);
   // Level 2 Opening Page
   fill(0);
   textSize(75);
   text("Level 2:", 250, 155);
   text("Defeat More Minions!", 50, 305);
-  if(key == 'p'){
+
+  // Ready Phrase
+  fill(0);
+  textSize(30);
+  text("press 'u' when ready!", 500, 430);
+  if(key == 'u'){
     Level2OP = false;
     Level2 = true;
-}
+  }
 }
 
-  public void Level2(){     // Rachel
-    if(key == 'p'){
+  public void Level2(){
+    background(0);
+    // Colour Chosen
+    fill(255, 215, 84);
+    textSize(70);
+    text("Orange", 300, 100);
+
+    // Box 1: Yellow
+    fill(255, 215, 84);
+    rect(150, 200, 150, 150);
+    if(mouseX > 150 && mouseY > 200 && mouseX < 300 && mouseY < 350 && mousePressed){
+      gameoverScreen = true;
       Level2 = false;
+    }
+
+    // Box 2: Orange
+    fill(255, 119, 0);
+    rect(500, 200, 150, 150);
+    if(mouseX > 500 && mouseY > 200 && mouseX < 650 && mouseY < 350 && mousePressed){
       Level3OP = true;
+      Level2 = false;
     }
   }
 
-public void Level3OP(){
+  public void Level3OP(){
   background(255);
   // Level 3 Opening Page
   fill(0);
   textSize(75);
   text("Level 3:", 250, 155);
-  text("Defeat Mini Boss!", 50, 305);
+  text("Defeat Mini Boss!", 100, 255);
+
+  // Ready Phrase
+  fill(0);
+  textSize(30);
+  text("press 'p' when ready!", 500, 430);
   if(key == 'p'){
     Level3OP = false;
     Level3 = true;
   }
-
 }
 
-public void Level3(){
+  public void Level3(){
   background(74, 47, 47);
     // Colour Chosen
     fill(53, 2, 54);
     textSize(70);
-    text("pink", 340, 100);
+    text("pink", 330, 100);
 
     // Box 1: Black
     fill(0);
     rect(50, 200, 150, 150);
-    if(mouseX > 50 && mouseY > 200 && mouseX < 200 && mouseY < 200 && mousePressed){
+    if(mouseX > 50 && mouseY > 200 && mouseX < 200 && mouseY < 350 && mousePressed){
       gameoverScreen = true;
-      Level1 = false;
+      Level3 = false;
     }
 
     // Box 2: Pink
     fill(239, 75, 242);
     rect(325, 200, 150, 150);
     if(mouseX > 325 && mouseY > 200 && mouseX < 475 && mouseY < 350 && mousePressed){
-      Level2OP = true;
-      Level1 = false;
+      Level4OP = true;
+      Level3 = false;
     }
 
     // Box 3: Purple
@@ -313,49 +313,7 @@ public void Level3(){
     rect(600, 200, 150, 150);
     if(mouseX > 600 && mouseY > 200 && mouseX < 750 && mouseY < 350 && mousePressed){
       gameoverScreen = true;
-      Level1 = false;
+      Level3 = false;
     }
-}
-
-public void Level4OP(){  // Rachel
-  if(key == 'p'){
-    Level4OP = false;
-    Level4 = true;
   }
-
-}
-
-public void Level4(){  // Rachel
-  if(key == 'p'){
-    Level4 = false;
-    Level5OP = true;
-  }
-
-}
-
-public void Level5OP(){
-  background(255);
-  // Level 5 Opening Page
-  fill(0);
-  textSize(75);
-  text("Final Level:", 250, 155);
-  text("Defeat Evil Loli!", 50, 305);
-  if(key == 'p'){
-    Level5OP = false;
-    Level5 = true;
-  }
-}
-
-public void Level5(){
-  if(key == 'p'){
-    Level5 = false;
-    youwinScreen = true;
-  }
-
-}
-
-public void youwinScreen(){ // Rachel
-
-}
-
 }
