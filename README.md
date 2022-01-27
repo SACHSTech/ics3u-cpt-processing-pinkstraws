@@ -19,5 +19,5 @@ Put your program description here.
     To win, you will need a total point count of over 100. anything under 100, you will lose
 
 5. Limitations
-    There are a certain amount of tiles you can click from. 
-    Depending on the level, there may be 2 or even 5 tiles to choose from.
+    There are a certain amount of tiles you can click from. Depending
+    on the level, there may be 2 or even 5 tiles to choose from.
