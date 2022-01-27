@@ -95,7 +95,7 @@ public class Sketch2 extends PApplet {
     // How To Play Sign
     fill(50);
     textSize(40);
-    text("Press e to play", 240, 150);
+    text("Press 'e' to play", 235, 150);
 
     // How To Play Button
     fill(255, 255, 255);
@@ -104,7 +104,7 @@ public class Sketch2 extends PApplet {
     // Play Sign
     fill(50);
     textSize(28);
-    text("Press i for instructions", 235, 250);
+    text("Press 'i' for instructions", 230, 250);
 
     // Extreme
     fill(194, 25, 25);
@@ -134,6 +134,60 @@ public class Sketch2 extends PApplet {
     rect(680, 270, 90, 30);
     rect(680, 100, 30, 200);
 
+  // Character #1
+  fill(49, 181, 222);
+  ellipse(50, 380, 75, 120);
+  
+  // eyes
+  fill(255);
+  ellipse(35, 360, 20, 20);
+  ellipse(65, 360, 20, 20);
+
+  fill(0);
+  ellipse(35, 360, 5, 5);
+  ellipse(65, 360, 5, 5);
+
+  // mouth 
+  fill(255, 42, 38);
+  textSize(50);
+  text("~", 35, 420);
+
+  // Character #2
+  fill(255, 143, 205);
+  ellipse(400, 380, 75, 120);
+  
+  // eyes
+  fill(255);
+  ellipse(410, 360, 20, 20);
+  ellipse(430, 360, 20, 20);
+
+  fill(0);
+  ellipse(410, 360, 5, 5);
+  ellipse(430, 360, 5, 5);
+
+  // mouth 
+  fill(255, 42, 38);
+  textSize(50);
+  text("O", 400, 420);
+
+  // Character #3
+  fill(183, 74, 255);
+  ellipse(730, 380, 75, 120);
+  
+  // eyes
+  fill(255);
+  ellipse(720, 360, 20, 20);
+  ellipse(740, 360, 20, 20);
+
+  fill(0);
+  ellipse(720, 360, 5, 5);
+  ellipse(740, 360, 5, 5);
+
+  // mouth 
+  fill(255, 42, 38);
+  textSize(50);
+  text("_", 720, 400);
+
     if(key == 'e'){
       menuScreen = false;
       Level1OP = true;
@@ -158,11 +212,47 @@ public class Sketch2 extends PApplet {
     text("to choose the right colour", 30, 190);
     text("Click the right colour to ", 30, 250);
     text("move onto the next level ", 30, 290);
-    text("If you don't move fast enough,", 400, 150);
-    text("you will die!", 400, 190);
-    text("Press 'm' to go back to", 400, 250);
-    text("the main menu at any time", 400, 290);
-    
+    text("If you don't move fast", 400, 150);
+    text("enough, you will die!", 400, 190);
+    text("Press 'm' to go back to the", 400, 250);
+    text("main menu when prompted", 400, 290);
+
+    // Character #1
+  fill(49, 181, 222);
+  ellipse(50, 380, 75, 120);
+  
+  // eyes
+  fill(255);
+  ellipse(60, 360, 20, 20);
+  ellipse(80, 360, 20, 20);
+
+  fill(0);
+  ellipse(65, 355, 5, 5);
+  ellipse(85, 355, 5, 5);
+
+  // mouth 
+  fill(255, 42, 38);
+  textSize(50);
+  text("~", 50, 420);
+
+  // Character #2
+  fill(183, 74, 255);
+  ellipse(730, 380, 75, 120);
+  
+  // eyes
+  fill(255);
+  ellipse(700, 360, 20, 20);
+  ellipse(720, 360, 20, 20);
+
+  fill(0);
+  ellipse(695, 355, 5, 5);
+  ellipse(715, 355, 5, 5);
+
+  // mouth 
+  fill(255, 42, 38);
+  textSize(50);
+  text("_", 700, 400);
+
     if(key == 'm'){
       instructionScreen = false;
       menuScreen = true;
@@ -248,7 +338,7 @@ public class Sketch2 extends PApplet {
     // Colour Chosen
     fill(255, 215, 84);
     textSize(70);
-    text("Orange", 300, 100);
+    text("Orange", 285, 100);
 
     // Box 1: Yellow
     fill(255, 215, 84);
