@@ -2,134 +2,58 @@ import processing.core.PApplet;
 
 public class Sketch1 extends PApplet {
 
-
-
   // Rachel's page
-	
-  public boolean mClicked = false; 
-  boolean minionScreen;
-  boolean gameOverScreen;
-  boolean levelFour;
-  boolean levelFiveOP;
+
+  // Input boolean
+    boolean mClicked = false; 
+    boolean mPressed = false;
+
+  // Frame booleans
+    boolean minionScreen;
+    boolean gameOverScreen;
+    boolean levelFourOP;
+    boolean levelFour;
+    boolean levelFiveOP;
+    boolean levelFive;
 
   // Variables for minions
-  float bodyX = 400;
-  float bodyY = 150;
-  float bodySize = (193);
-  float bodyDistance = bodySize/2;
+    float bodyX = 400;
+    float bodyY = 150;
+    float bodySize = 193;
+    float bodyDistance = bodySize/2;
 
-  public void settings() {
+
+  public void settings() 
+  {
     size(800, 450);
-
-  // Background Settings
-  
- 
   }
   
-  public void setup() {
-    background(0);
+  public void setup() 
+  {
+    minionScreen = true;
   }
 
-  public void draw() {
-
-    if(gameOverScreen){
+  public void draw() 
+  {
+    if(minionScreen)
+    {
+      minionScreen();
+    }
+    else if(levelFourOP)
+    {
+     levelFourOP();
+    }
+    else if(levelFour)
+    {
+      levelFour();
+    }
+    else if(gameOverScreen)
+    {
       gameOverScreen();
     }
-  
-  fill(255);
-  textSize(30);
-  text("Loli's Evil Minions", 10, 400);
-
-  fill(255);
-  textSize(30);
-  text("Click anywhere to begin!", 10, 430);
-
-  // Character #1
-  fill(49, 181, 222);
-  ellipse(width/4, height/3, width/5, height/2);
-  
-  // eyes
-  fill(255);
-  ellipse(175, 120, 40, 40);
-  ellipse(230, 120, 40, 40);
-
-  fill(0);
-  ellipse(175, 120, 20, 20);
-  ellipse(230, 120, 20, 20);
-
-  // mouth 
-  fill(255, 42, 38);
-  textSize(75);
-  text("~", 180, 230);
-
-  // Character #2
-  fill(255, 143, 205);
-  ellipse(width/2, height/3,  width/5, height/2);
-
-  // eyes
-  fill(255);
-  ellipse(400, 120, 40, 40);
-  ellipse(450, 120, 40, 40);
-
-  fill(0);
-  ellipse(400, 120, 20, 20);
-  ellipse(450, 120, 20, 20);
-
-  // mouth
-  fill(255, 42, 38);
-  textSize(50);
-  text("O", 400, 230);
-
-  // Character #3
-  fill(183, 74, 255);
-  ellipse(600, height/3, width/5, height/2);
-
-  // eyes
-  fill(255);
-  ellipse(620, 120, 40, 40);
-  ellipse(580, 120, 40, 40);
-
-  fill(0);
-  ellipse(620, 120, 20, 20);
-  ellipse(580, 120, 20, 20);
-
-  // mouth
-  fill(255, 42, 38);
-  textSize(50);
-  text("__", 575, 200);
-  
-  // Enter Game
-  if (mClicked) {
-    background (0);
-  
-    // Level Four
-    fill(66, 245, 173);
-    textSize(40);
-    text("Yellow", 350, 50);
-    
-    rect(50, 100, 200, 200);
-    if(mouseX > 50 && mouseY > 100 && mouseX < 150 && mouseY < 150 && mousePressed){
-      gameOverScreen = true;
-      levelFour = false;
-    }
+  }
    
-    fill(140, 255, 0);
-    rect(300, 100, 200, 200);
-    if(mouseX > 200 && mouseY > 100 && mouseX < 400 && mouseY < 400 && mousePressed){
-      gameOverScreen = true;
-      levelFour = false;
-    }
-    
-    fill(255, 224, 110);
-    rect(550, 100, 200, 200);
-    if(mouseX > 550 && mouseY > 100 && mouseX < 650 && mouseY < 650 && mousePressed){
-      levelFiveOP = true;
-      levelFour = true;
-    }
-
-    
-
-    
+ 
 
     /* Level Five
     fill(252, 3, 157);
@@ -144,10 +68,10 @@ public class Sketch1 extends PApplet {
 
  
       // Add one point to score board
-    }
     
     
-  }
+    
+  
   // You win screen
  // background(0);
 //  drawMinionOne(random(width), random(height), random(20, 55));
@@ -184,13 +108,159 @@ public class Sketch1 extends PApplet {
 }
 */
   // Define other methods
-  public void minionScreen(){
+  public void minionScreen()
+  {
+  
     background(0);
-    
+    fill(255);
+    textSize(30);
+    text("Loli's Evil Minions", 10, 400);
+
+    fill(255);
+    textSize(30);
+    text("Click anywhere to begin!", 10, 430);
+
+  // Character #1
+    fill(49, 181, 222);
+    ellipse(width/4, height/3, width/5, height/2);
+  
+  // eyes
+    fill(255);
+    ellipse(175, 120, 40, 40);
+    ellipse(230, 120, 40, 40);
+
+    fill(0);
+    ellipse(175, 120, 20, 20);
+    ellipse(230, 120, 20, 20);
+
+  // mouth 
+    fill(255, 42, 38);
+    textSize(75);
+    text("~", 180, 230);
+
+  // Character #2
+    fill(255, 143, 205);
+    ellipse(width/2, height/3,  width/5, height/2);
+
+  // eyes
+    fill(255);
+    ellipse(400, 120, 40, 40);
+    ellipse(450, 120, 40, 40);
+
+    fill(0);
+    ellipse(400, 120, 20, 20);
+    ellipse(450, 120, 20, 20);
+
+  // mouth
+    fill(255, 42, 38);
+    textSize(50);
+    text("O", 400, 230);
+
+  // Character #3
+    fill(183, 74, 255);
+    ellipse(600, height/3, width/5, height/2);
+
+  // eyes
+    fill(255);
+    ellipse(620, 120, 40, 40);
+    ellipse(580, 120, 40, 40);
+
+    fill(0);
+    ellipse(620, 120, 20, 20);
+    ellipse(580, 120, 20, 20);
+
+  // mouth
+    fill(255, 42, 38);
+    textSize(50);
+    text("__", 575, 200);
+
+   // Enter Game
+    if (mClicked) 
+    {
+      background(0);
+      levelFourOP();
+    }
+  }
+  
+  public void mouseClicked() 
+  {
+    mClicked = true;
+  }
+  public void mousePressed()
+  {
+    mPressed = true;
+  }
+  public void levelFourOP()
+  {
+    background(255);
+    fill(0);
+    textSize(75);
+    text("Level 4:", 250, 155);
+    text("Good Luck!", 50, 305);
+
+    textSize(45);
+    text("Click the 'o' key when you are ready!", 25, 400);
+    if(keyPressed = true)
+    {
+      if(key == 'o')
+      {
+      levelFour();
+      }
+    }
   }
 
-  public void mouseClicked() {
-    mClicked = true;
+  public void levelFour()
+  {
+    background(0);
+    fill(66, 245, 173);
+    textSize(40);
+    text("Yellow", 345, 50);
+  
+    rect(50, 100, 200, 200);
+    if(mouseX > 50 && mouseY > 100 && mouseX < 150 && mouseY < 150 && mousePressed)
+    {
+      gameOverScreen();
+    }
+ 
+    fill(140, 255, 0);
+    rect(300, 100, 200, 200);
+    if(mouseX > 200 && mouseY > 100 && mouseX < 400 && mouseY < 400 && mousePressed)
+    {
+      gameOverScreen = true;
+      levelFour = false;
+    }
+  
+    fill(255, 224, 110);
+    rect(550, 100, 200, 200);
+    if(mouseX > 550 && mouseY > 100 && mouseX < 650 && mouseY < 650 && mousePressed)
+    {
+      levelFiveOP = true;
+      levelFour = true;
+    }
+
+  }
+  public void levelFiveOP()
+  {
+    background(255);
+    fill(0);
+    textSize(75);
+    text("Level 5:", 250, 155);
+    text("Can you beat the ultimate boss?!", 50, 305);
+
+    textSize(45);
+    text("Click the 'q' key when you are ready!", 25, 400);
+    if(keyPressed = true)
+    {
+      if(key == 'q')
+      {
+      levelFive();
+      }
+    }
+  }
+
+  public void levelFive()
+  {
+
   }
 
   public void gameOverScreen(){
@@ -201,7 +271,7 @@ public class Sketch1 extends PApplet {
     textSize(30);
     text("Press 'm' to go back to menu", 200, 400);
     if(key == 'm') {
-      gameOverScreen = false;
+    gameOverScreen = false;
     }
   } 
 
