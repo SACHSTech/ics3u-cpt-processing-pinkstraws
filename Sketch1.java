@@ -64,10 +64,7 @@ public class Sketch1 extends PApplet {
       gameOverScreen();
     }
   }
-    
-      // Add one point to score board
-    
-    
+   
   // Define other methods
   public void minionScreen()
   {
@@ -319,7 +316,7 @@ public class Sketch1 extends PApplet {
     float bodyDistance = bodySize / 2;
 
     fill(255, 128, 0);
-
+    strokeWeight(0);
   // body
     fill(49, 181, 222);
     ellipse(bodyX, bodyY, bodySize*3, bodySize*4);
@@ -345,7 +342,7 @@ public class Sketch1 extends PApplet {
 
     fill(102);
     rect(75, 310, 250, 50);
-    if(mouseX > 75  && mouseY > 310 && mouseX < 325 && mouseY < 125 && mousePressed)
+    if(mouseX > 75  && mouseY > 310 && mouseX < 325 && mouseY < 360 && mousePressed)
     {
       levelFourOP = true;
       winScreen = false;
