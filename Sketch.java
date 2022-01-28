@@ -710,6 +710,7 @@ public class Sketch extends PApplet {
 
   public void winScreen()
   {
+    if(points >= 200)
     background(255, 161, 133);
     // Background Design
     stroke(255);
