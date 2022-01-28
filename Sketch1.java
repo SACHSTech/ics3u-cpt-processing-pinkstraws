@@ -19,6 +19,9 @@ public class Sketch1 extends PApplet {
     float bodySize = 193;
     float bodyDistance = bodySize/2;
 
+  // Array Scoreboard
+  int points = 0;
+
 
   public void settings() 
   {
@@ -163,6 +166,11 @@ public class Sketch1 extends PApplet {
   public void levelFour()
   {
     background(0);
+
+    // Timer
+    fill(255);
+    text(millis(), 740, 30);
+
     fill(66, 245, 173);
     textSize(40);
     text("Yellow", 345, 50);
@@ -190,10 +198,15 @@ public class Sketch1 extends PApplet {
       {
         levelFiveOP = true;
         levelFour = false;
+
+        int timeBonus = ((20000 / millis())*10);
+        points = points +10 + timeBonus;
       }
+      textSize(20);
+      text("Points: " + points, 10, 30);
     }
   
-  
+    
 
   public void levelFiveOP()
   {
@@ -211,10 +224,16 @@ public class Sketch1 extends PApplet {
       levelFive = true;
       levelFiveOP = false;
     }
+    textSize(20);
+      text("Points: " + points, 10, 30);
   }
   public void levelFive()
   {
     background(0);
+    // Timer
+    fill(255);
+    text(millis(), 740, 30);
+
     fill(252, 3, 157);
     textSize(40);
     text("Red", 350, 50);
@@ -234,6 +253,9 @@ public class Sketch1 extends PApplet {
     {
       winScreen = true;
       levelFive = false;
+
+      int timeBonus = ((20000/ millis())*10);
+      points = points + 10 + timeBonus;
     }
     // box 3
     fill(255, 115, 0);
@@ -259,6 +281,8 @@ public class Sketch1 extends PApplet {
       gameOverScreen = true;
       levelFive = false;
     }
+    textSize(20);
+    text("Point: "+points, 10, 30);
   }
 
   public void gameOverScreen()
@@ -278,6 +302,15 @@ public class Sketch1 extends PApplet {
   public void winScreen()
   {
     background(255, 161, 133);
+    // Background Design
+    stroke(255);
+    for(int i = 1; i<= 9; i++)
+    {
+      strokeWeight(i);
+
+      int lineX = i * 30;
+      line(lineX, 0, lineX, height);
+    }
     drawMinionOne(random(width), random(height), random(10, 50));
   }
   
@@ -306,7 +339,7 @@ public class Sketch1 extends PApplet {
     ellipse(bodyX + bodyDistance, bodyY - bodyDistance, bodySize/3, bodySize/3);
 
   
-    fill(255);
+    fill(0);
     textSize(100);
     text("You win!", 200, 250);
 
@@ -333,6 +366,9 @@ public class Sketch1 extends PApplet {
     fill(255);
     textSize(40);
     text("Return to Menu", 410, 350);
+
+    
   }
+  
 }
 
