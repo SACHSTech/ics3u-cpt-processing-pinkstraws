@@ -27,7 +27,6 @@ public class Sketch2 extends PApplet {
   boolean endScreen;
 
   // Scoreboard
-
   int points = 0;
 
   public void settings() {
@@ -35,7 +34,7 @@ public class Sketch2 extends PApplet {
   }
 
   public void setup() {
-    endScreen = true;
+    menuScreen = true;
     background(0, 0, 0);
 
     snowY = new float [width];
@@ -303,7 +302,7 @@ public class Sketch2 extends PApplet {
     
     // Timer
     fill(255);
-    text(millis(), 500, 30);
+    text(millis(), 740, 30);
 
     // Colour Chosen
     fill(255);
@@ -362,7 +361,7 @@ public class Sketch2 extends PApplet {
     background(0);
     // Timer
     fill(255);
-    text(millis(), 500, 30);
+    text(millis(), 740, 30);
 
     // Colour Chosen
     fill(255, 215, 84);
@@ -414,7 +413,7 @@ public class Sketch2 extends PApplet {
   background(74, 47, 47);
   // Timer
   fill(255);
-  text(millis(), 500, 30);
+  text(millis(), 740, 30);
     // Colour Chosen
     fill(53, 2, 54);
     textSize(70);
@@ -513,5 +512,9 @@ public class Sketch2 extends PApplet {
     textSize(30);
     text("w", 720, 410);
     }
+  if(key == 'm'){
+    menuScreen = true;
+    endScreen = false;
+  }
   }
 }
