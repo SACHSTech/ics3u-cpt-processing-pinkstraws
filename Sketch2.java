@@ -35,7 +35,7 @@ public class Sketch2 extends PApplet {
   }
 
   public void setup() {
-    menuScreen = true;
+    endScreen = true;
     background(0, 0, 0);
 
     snowY = new float [width];
@@ -450,25 +450,68 @@ public class Sketch2 extends PApplet {
   }
 
   public void endScreen(){
-    background(0);
+  background(0);
+  fill(255);
+  if(points >= 100){
+    textSize(50);
+    text("You Win!" , 200, 100);
+    text("Your score was: " + points, 100, 150);
+    text("Thank you for", 100, 300);
+    text("saving the world", 100, 350);
+    text("from the evil Loli", 100, 400);
+  }
+  else if(points < 100){
     fill(255);
-    if(points >= 100){
-      textSize(50);
-      text("You Win!" , 200, 100);
-      text("Your score was: " + points, 100, 150);
-      text("Thank you for", 100, 300);
-      text("saving the world", 100, 350);
-      text("from the evil Loli", 100, 400);
+    textSize(50);
+    text("You Lose!" , 200, 100);
+    text("Your score was: " + points, 100, 150);
+    text("The Evil Loli", 100, 300);
+    text("has taken over", 100, 350);
+    text("the world!", 100, 400);
+    // Character #1
+    fill(49, 181, 222);
+    ellipse(50, 380, 75, 120);
+  
+    // eyes
+    fill(0);
+    textSize(30);
+    text("x", 20, 380);
+    text("x", 60, 380);
 
-    }
-    else if(points < 100){
-      fill(255);
-      textSize(50);
-      text("You Lose!" , 200, 100);
-      text("Your score was: " + points, 100, 150);
-      text("The Evil Loli", 100, 300);
-      text("has taken over", 100, 350);
-      text("the world!", 100, 400);
+    // mouth 
+    fill(255, 42, 38);
+    textSize(50);
+    text("~", 35, 420);
+
+    // Character #2
+    fill(255, 143, 205);
+    ellipse(600, 200, 75, 120);
+  
+    // eyes
+    fill(255);
+    textSize(30);
+    text("x", 580, 200);
+    text("x", 610, 200);
+
+    // mouth 
+    fill(255, 42, 38);
+    textSize(50);
+    text("_", 590, 230);
+
+    // Character #3
+    fill(183, 74, 255);
+    ellipse(730, 380, 75, 120);
+  
+    // eyes
+    fill(0);
+    textSize(30);
+    text("x", 710, 360);
+    text("x", 730, 360);
+    
+    // mouth 
+    fill(255, 42, 38);
+    textSize(30);
+    text("w", 720, 410);
     }
   }
 }
