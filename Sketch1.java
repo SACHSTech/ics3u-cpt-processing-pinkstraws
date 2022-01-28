@@ -209,11 +209,11 @@ public class Sketch1 extends PApplet {
   {
     background(255);
     fill(0);
-    textSize(75);
-    text("Level 5:", 250, 155);
-    text("Can you beat the ultimate boss?!", 50, 305);
-
-    textSize(45);
+    textSize(50);
+    text("Level 5:", 260, 155);
+    text("Can you beat the ultimate boss?!", 25, 305);
+  
+    textSize(35);
     text("Click the 'q' key when you are ready!", 25, 400);
     
     if(key == 'q')
