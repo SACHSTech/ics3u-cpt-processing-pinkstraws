@@ -65,7 +65,6 @@ public class Sketch1 extends PApplet {
     }
   }
    
-  // Define other methods
   public void minionScreen()
   {
   
@@ -140,7 +139,6 @@ public class Sketch1 extends PApplet {
     }
    }
   
-
   public void levelFourOP()
   {
     background(255);
@@ -202,8 +200,6 @@ public class Sketch1 extends PApplet {
       textSize(20);
       text("Points: " + points, 10, 30);
     }
-  
-    
 
   public void levelFiveOP()
   {
@@ -224,6 +220,7 @@ public class Sketch1 extends PApplet {
     textSize(20);
       text("Points: " + points, 10, 30);
   }
+
   public void levelFive()
   {
     background(0);
