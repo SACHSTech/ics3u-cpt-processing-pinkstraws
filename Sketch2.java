@@ -3,6 +3,7 @@ import processing.core.PApplet;
 public class Sketch2 extends PApplet {
 	
 	// Romuel's Page
+
   // Snow Settings
   float[] snowY;
   float speed = 1;
@@ -83,7 +84,6 @@ public class Sketch2 extends PApplet {
     background(0);
     fill(75);
 
-
     for(int i = 0; i < snowY.length; i++){
       ellipse(i * 2, snowY[i], width / 80, height / 80);
       snowY[i] += speed;
@@ -140,59 +140,59 @@ public class Sketch2 extends PApplet {
     rect(680, 270, 90, 30);
     rect(680, 100, 30, 200);
 
-  // Character #1
-  fill(49, 181, 222);
-  ellipse(50, 380, 75, 120);
-  
-  // eyes
-  fill(255);
-  ellipse(35, 360, 20, 20);
-  ellipse(65, 360, 20, 20);
+    // Character #1
+    fill(49, 181, 222);
+    ellipse(50, 380, 75, 120);
+    
+    // eyes
+    fill(255);
+    ellipse(35, 360, 20, 20);
+    ellipse(65, 360, 20, 20);
 
-  fill(0);
-  ellipse(35, 360, 5, 5);
-  ellipse(65, 360, 5, 5);
+    fill(0);
+    ellipse(35, 360, 5, 5);
+    ellipse(65, 360, 5, 5);
 
-  // mouth 
-  fill(255, 42, 38);
-  textSize(50);
-  text("~", 35, 420);
+    // mouth 
+    fill(255, 42, 38);
+    textSize(50);
+    text("~", 35, 420);
 
-  // Character #2
-  fill(255, 143, 205);
-  ellipse(400, 380, 75, 120);
-  
-  // eyes
-  fill(255);
-  ellipse(410, 360, 20, 20);
-  ellipse(430, 360, 20, 20);
+    // Character #2
+    fill(255, 143, 205);
+    ellipse(400, 380, 75, 120);
+    
+    // eyes
+    fill(255);
+    ellipse(410, 360, 20, 20);
+    ellipse(430, 360, 20, 20);
 
-  fill(0);
-  ellipse(410, 360, 5, 5);
-  ellipse(430, 360, 5, 5);
+    fill(0);
+    ellipse(410, 360, 5, 5);
+    ellipse(430, 360, 5, 5);
 
-  // mouth 
-  fill(255, 42, 38);
-  textSize(50);
-  text("O", 400, 420);
+    // mouth 
+    fill(255, 42, 38);
+    textSize(50);
+    text("O", 400, 420);
 
-  // Character #3
-  fill(183, 74, 255);
-  ellipse(730, 380, 75, 120);
-  
-  // eyes
-  fill(255);
-  ellipse(720, 360, 20, 20);
-  ellipse(740, 360, 20, 20);
+    // Character #3
+    fill(183, 74, 255);
+    ellipse(730, 380, 75, 120);
+    
+    // eyes
+    fill(255);
+    ellipse(720, 360, 20, 20);
+    ellipse(740, 360, 20, 20);
 
-  fill(0);
-  ellipse(720, 360, 5, 5);
-  ellipse(740, 360, 5, 5);
+    fill(0);
+    ellipse(720, 360, 5, 5);
+    ellipse(740, 360, 5, 5);
 
-  // mouth 
-  fill(255, 42, 38);
-  textSize(50);
-  text("_", 720, 400);
+    // mouth 
+    fill(255, 42, 38);
+    textSize(50);
+    text("_", 720, 400);
 
     if(key == 'e'){
       menuScreen = false;
@@ -201,11 +201,12 @@ public class Sketch2 extends PApplet {
     if(key == 'i'){
       menuScreen = false;
       instructionScreen = true;
-      }
+    }
   }
 
   public void instructionScreen(){
     background(255, 158, 158);
+
     // Instruction Title
     fill(0);
     textSize(50);
@@ -224,45 +225,45 @@ public class Sketch2 extends PApplet {
     text("main menu when prompted", 400, 290);
 
     // Character #1
-  fill(49, 181, 222);
-  ellipse(50, 380, 75, 120);
-  
-  // eyes
-  fill(255);
-  ellipse(60, 360, 20, 20);
-  ellipse(80, 360, 20, 20);
+    fill(49, 181, 222);
+    ellipse(50, 380, 75, 120);
+    
+    // eyes
+    fill(255);
+    ellipse(60, 360, 20, 20);
+    ellipse(80, 360, 20, 20);
 
-  fill(0);
-  ellipse(65, 355, 5, 5);
-  ellipse(85, 355, 5, 5);
+    fill(0);
+    ellipse(65, 355, 5, 5);
+    ellipse(85, 355, 5, 5);
 
-  // mouth 
-  fill(255, 42, 38);
-  textSize(50);
-  text("~", 50, 420);
+    // mouth 
+    fill(255, 42, 38);
+    textSize(50);
+    text("~", 50, 420);
 
-  // Character #2
-  fill(183, 74, 255);
-  ellipse(730, 380, 75, 120);
-  
-  // eyes
-  fill(255);
-  ellipse(700, 360, 20, 20);
-  ellipse(720, 360, 20, 20);
+    // Character #2
+    fill(183, 74, 255);
+    ellipse(730, 380, 75, 120);
+    
+    // eyes
+    fill(255);
+    ellipse(700, 360, 20, 20);
+    ellipse(720, 360, 20, 20);
 
-  fill(0);
-  ellipse(695, 355, 5, 5);
-  ellipse(715, 355, 5, 5);
+    fill(0);
+    ellipse(695, 355, 5, 5);
+    ellipse(715, 355, 5, 5);
 
-  // mouth 
-  fill(255, 42, 38);
-  textSize(50);
-  text("_", 700, 400);
+    // mouth 
+    fill(255, 42, 38);
+    textSize(50);
+    text("_", 700, 400);
 
     if(key == 'm'){
       instructionScreen = false;
       menuScreen = true;
-      }
+    }
   }
   
   public void gameoverScreen(){
@@ -279,21 +280,21 @@ public class Sketch2 extends PApplet {
   }
 
   public void Level1OP(){
-  background(255);
-  // Level 1 Opening Page
-  fill(0);
-  textSize(75);
-  text("Level 1:", 255, 155);
-  text("Get Passed Evil", 120, 255);
-  text("Loli's Minions!", 160, 325);
+    background(255);
+    // Level 1 Opening Page
+    fill(0);
+    textSize(75);
+    text("Level 1:", 255, 155);
+    text("Get Passed Evil", 120, 255);
+    text("Loli's Minions!", 160, 325);
 
-  // Ready Phrase
-  fill(0);
-  textSize(30);
-  text("press 'p' when ready!", 500, 430);
-  if(key == 'p'){
-    Level1 = true;
-    Level1OP = false;
+    // Ready Phrase
+    fill(0);
+    textSize(30);
+    text("press 'p' when ready!", 500, 430);
+    if(key == 'p'){
+      Level1 = true;
+      Level1OP = false;
     }
   }
 
@@ -315,13 +316,6 @@ public class Sketch2 extends PApplet {
     if(mouseX > 150 && mouseY > 200 && mouseX < 300 && mouseY < 350 && mousePressed){
       Level2OP = true;
       Level1 = false;
-
-      // Points and Time Bonus
-      /* whenever you click the right box
-      * you get a point. If you also
-      * click the right box fast,
-      * you will get extra points
-      */
       int timeBonus = ((20000 / millis()) * 10);
       points = points + 10 + timeBonus;
     }
@@ -338,27 +332,28 @@ public class Sketch2 extends PApplet {
   }
 
   public void Level2OP(){  
-  background(255);
-  // Level 2 Opening Page
-  fill(0);
-  textSize(75);
-  text("Level 2:", 250, 155);
-  text("Defeat More Minions!", 50, 305);
+    background(255);
+    // Level 2 Opening Page
+    fill(0);
+    textSize(75);
+    text("Level 2:", 250, 155);
+    text("Defeat More Minions!", 50, 305);
 
-  // Ready Phrase
-  fill(0);
-  textSize(30);
-  text("press 'u' when ready!", 500, 430);
-  if(key == 'u'){
-    Level2OP = false;
-    Level2 = true;
-  }
-  textSize(20);
-  text("Points: " + points, 10, 30);
+    // Ready Phrase
+    fill(0);
+    textSize(30);
+    text("press 'u' when ready!", 500, 430);
+    if(key == 'u'){
+      Level2OP = false;
+      Level2 = true;
+    }
+    textSize(20);
+    text("Points: " + points, 10, 30);
 }
 
   public void Level2(){
     background(0);
+
     // Timer
     fill(255);
     text(millis(), 740, 30);
@@ -390,30 +385,33 @@ public class Sketch2 extends PApplet {
   }
 
   public void Level3OP(){
-  background(255);
-  // Level 3 Opening Page
-  fill(0);
-  textSize(75);
-  text("Level 3:", 250, 155);
-  text("Defeat Mini Boss!", 100, 255);
+    background(255);
+    
+    // Level 3 Opening Page
+    fill(0);
+    textSize(75);
+    text("Level 3:", 250, 155);
+    text("Defeat Mini Boss!", 100, 255);
 
-  // Ready Phrase
-  fill(0);
-  textSize(30);
-  text("press 'p' when ready!", 500, 430);
-  if(key == 'p'){
-    Level3OP = false;
-    Level3 = true;
-  }
-  textSize(20);
-  text("Points: " + points, 10, 30);
+    // Ready Phrase
+    fill(0);
+    textSize(30);
+    text("press 'p' when ready!", 500, 430);
+    if(key == 'p'){
+      Level3OP = false;
+      Level3 = true;
+    }
+    textSize(20);
+    text("Points: " + points, 10, 30);
 }
 
   public void Level3(){
-  background(74, 47, 47);
-  // Timer
-  fill(255);
-  text(millis(), 740, 30);
+    background(74, 47, 47);
+
+    // Timer
+    fill(255);
+    text(millis(), 740, 30);
+
     // Colour Chosen
     fill(53, 2, 54);
     textSize(70);
@@ -449,72 +447,72 @@ public class Sketch2 extends PApplet {
   }
 
   public void endScreen(){
-  background(0);
-  fill(255);
-  if(points >= 100){
-    textSize(50);
-    text("You Win!" , 200, 100);
-    text("Your score was: " + points, 100, 150);
-    text("Thank you for", 100, 300);
-    text("saving the world", 100, 350);
-    text("from the evil Loli", 100, 400);
-  }
-  else if(points < 100){
+    background(0);
     fill(255);
-    textSize(50);
-    text("You Lose!" , 200, 100);
-    text("Your score was: " + points, 100, 150);
-    text("The Evil Loli", 100, 300);
-    text("has taken over", 100, 350);
-    text("the world!", 100, 400);
-    // Character #1
-    fill(49, 181, 222);
-    ellipse(50, 380, 75, 120);
-  
-    // eyes
-    fill(0);
-    textSize(30);
-    text("x", 20, 380);
-    text("x", 60, 380);
-
-    // mouth 
-    fill(255, 42, 38);
-    textSize(50);
-    text("~", 35, 420);
-
-    // Character #2
-    fill(255, 143, 205);
-    ellipse(600, 200, 75, 120);
-  
-    // eyes
-    fill(255);
-    textSize(30);
-    text("x", 580, 200);
-    text("x", 610, 200);
-
-    // mouth 
-    fill(255, 42, 38);
-    textSize(50);
-    text("_", 590, 230);
-
-    // Character #3
-    fill(183, 74, 255);
-    ellipse(730, 380, 75, 120);
-  
-    // eyes
-    fill(0);
-    textSize(30);
-    text("x", 710, 360);
-    text("x", 730, 360);
-    
-    // mouth 
-    fill(255, 42, 38);
-    textSize(30);
-    text("w", 720, 410);
+    if(points >= 100){
+      textSize(50);
+      text("You Win!" , 200, 100);
+      text("Your score was: " + points, 100, 150);
+      text("Thank you for", 100, 300);
+      text("saving the world", 100, 350);
+      text("from the evil Loli", 100, 400);
     }
-  if(key == 'm'){
-    menuScreen = true;
-    endScreen = false;
-  }
+    else if(points < 100){
+      fill(255);
+      textSize(50);
+      text("You Lose!" , 200, 100);
+      text("Your score was: " + points, 100, 150);
+      text("The Evil Loli", 100, 300);
+      text("has taken over", 100, 350);
+      text("the world!", 100, 400);
+      // Character #1
+      fill(49, 181, 222);
+      ellipse(50, 380, 75, 120);
+    
+      // eyes
+      fill(0);
+      textSize(30);
+      text("x", 20, 380);
+      text("x", 60, 380);
+
+      // mouth 
+      fill(255, 42, 38);
+      textSize(50);
+      text("~", 35, 420);
+
+      // Character #2
+      fill(255, 143, 205);
+      ellipse(600, 200, 75, 120);
+    
+      // eyes
+      fill(255);
+      textSize(30);
+      text("x", 580, 200);
+      text("x", 610, 200);
+
+      // mouth 
+      fill(255, 42, 38);
+      textSize(50);
+      text("_", 590, 230);
+
+      // Character #3
+      fill(183, 74, 255);
+      ellipse(730, 380, 75, 120);
+    
+      // eyes
+      fill(0);
+      textSize(30);
+      text("x", 710, 360);
+      text("x", 730, 360);
+      
+      // mouth 
+      fill(255, 42, 38);
+      textSize(30);
+      text("w", 720, 410);
+      }
+    if(key == 'm'){
+      menuScreen = true;
+      endScreen = false;
+    }
   }
 }
