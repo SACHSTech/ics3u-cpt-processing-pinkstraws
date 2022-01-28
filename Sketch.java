@@ -21,8 +21,6 @@ public class Sketch extends PApplet {
   boolean Level3OP;
   boolean Level3;
   boolean endScreen;
-
-  // Rachel's Screens
   boolean minionScreen;
   boolean gameOverScreen;
   boolean levelFourOP;
@@ -38,7 +36,6 @@ public class Sketch extends PApplet {
   float bodyDistance = bodySize/2;
 
   // Scoreboard
-
   int points = 0;
 
   public void settings() {
@@ -64,8 +61,7 @@ public class Sketch extends PApplet {
     else if(instructionScreen){
       instructionScreen();
     }
-    else if(minionScreen)
-    {
+    else if(minionScreen){
       minionScreen();
     }
     else if(Level1OP){
@@ -391,7 +387,6 @@ public class Sketch extends PApplet {
       menuScreen = true;
     }
   }
-
   
   public void Level1OP(){
   background(255);
