@@ -25,9 +25,21 @@ public class Sketch extends PApplet {
   boolean Level5OP;
   boolean Level5;
   boolean endScreen;
+  boolean minionScreen;
+  boolean gameOverScreen;
+  boolean levelFourOP;
+  boolean levelFour;
+  boolean levelFiveOP;
+  boolean levelFive;
+  boolean winScreen;
+
+// Variables for minions
+  float bodyX = 400;
+  float bodyY = 150;
+  float bodySize = 193;
+  float bodyDistance = bodySize/2;
 
   // Scoreboard
-
   int points = 0;
 
   public void settings() {
@@ -52,6 +64,9 @@ public class Sketch extends PApplet {
     }
     else if(instructionScreen){
       instructionScreen();
+    }
+    else if(minionScreen){
+      minionScreen();
     }
     else if(Level1OP){
       Level1OP();
@@ -279,6 +294,10 @@ public class Sketch extends PApplet {
     }
   }
 
+  public void minionScreen(){
+
+  }
+  
   public void Level1OP(){
   background(255);
   // Level 1 Opening Page
