@@ -171,59 +171,59 @@ public class Sketch extends PApplet {
     rect(680, 270, 90, 30);
     rect(680, 100, 30, 200);
 
-  // Character #1
-  fill(49, 181, 222);
-  ellipse(50, 380, 75, 120);
-  
-  // eyes
-  fill(255);
-  ellipse(35, 360, 20, 20);
-  ellipse(65, 360, 20, 20);
+    // Character #1
+    fill(49, 181, 222);
+    ellipse(50, 380, 75, 120);
+    
+    // eyes
+    fill(255);
+    ellipse(35, 360, 20, 20);
+    ellipse(65, 360, 20, 20);
 
-  fill(0);
-  ellipse(35, 360, 5, 5);
-  ellipse(65, 360, 5, 5);
+    fill(0);
+    ellipse(35, 360, 5, 5);
+    ellipse(65, 360, 5, 5);
 
-  // mouth 
-  fill(255, 42, 38);
-  textSize(50);
-  text("~", 35, 420);
+    // mouth 
+    fill(255, 42, 38);
+    textSize(50);
+    text("~", 35, 420);
 
-  // Character #2
-  fill(255, 143, 205);
-  ellipse(400, 380, 75, 120);
-  
-  // eyes
-  fill(255);
-  ellipse(410, 360, 20, 20);
-  ellipse(430, 360, 20, 20);
+    // Character #2
+    fill(255, 143, 205);
+    ellipse(400, 380, 75, 120);
+    
+    // eyes
+    fill(255);
+    ellipse(410, 360, 20, 20);
+    ellipse(430, 360, 20, 20);
 
-  fill(0);
-  ellipse(410, 360, 5, 5);
-  ellipse(430, 360, 5, 5);
+    fill(0);
+    ellipse(410, 360, 5, 5);
+    ellipse(430, 360, 5, 5);
 
-  // mouth 
-  fill(255, 42, 38);
-  textSize(50);
-  text("O", 400, 420);
+    // mouth 
+    fill(255, 42, 38);
+    textSize(50);
+    text("O", 400, 420);
 
-  // Character #3
-  fill(183, 74, 255);
-  ellipse(730, 380, 75, 120);
-  
-  // eyes
-  fill(255);
-  ellipse(720, 360, 20, 20);
-  ellipse(740, 360, 20, 20);
+    // Character #3
+    fill(183, 74, 255);
+    ellipse(730, 380, 75, 120);
+    
+    // eyes
+    fill(255);
+    ellipse(720, 360, 20, 20);
+    ellipse(740, 360, 20, 20);
 
-  fill(0);
-  ellipse(720, 360, 5, 5);
-  ellipse(740, 360, 5, 5);
+    fill(0);
+    ellipse(720, 360, 5, 5);
+    ellipse(740, 360, 5, 5);
 
-  // mouth 
-  fill(255, 42, 38);
-  textSize(50);
-  text("_", 720, 400);
+    // mouth 
+    fill(255, 42, 38);
+    textSize(50);
+    text("_", 720, 400);
 
     if(key == 'e'){
       menuScreen = false;
@@ -255,40 +255,40 @@ public class Sketch extends PApplet {
     text("main menu when prompted", 400, 290);
 
     // Character #1
-  fill(49, 181, 222);
-  ellipse(50, 380, 75, 120);
-  
-  // eyes
-  fill(255);
-  ellipse(60, 360, 20, 20);
-  ellipse(80, 360, 20, 20);
+    fill(49, 181, 222);
+    ellipse(50, 380, 75, 120);
+    
+    // eyes
+    fill(255);
+    ellipse(60, 360, 20, 20);
+    ellipse(80, 360, 20, 20);
 
-  fill(0);
-  ellipse(65, 355, 5, 5);
-  ellipse(85, 355, 5, 5);
+    fill(0);
+    ellipse(65, 355, 5, 5);
+    ellipse(85, 355, 5, 5);
 
-  // mouth 
-  fill(255, 42, 38);
-  textSize(50);
-  text("~", 50, 420);
+    // mouth 
+    fill(255, 42, 38);
+    textSize(50);
+    text("~", 50, 420);
 
-  // Character #2
-  fill(183, 74, 255);
-  ellipse(730, 380, 75, 120);
-  
-  // eyes
-  fill(255);
-  ellipse(700, 360, 20, 20);
-  ellipse(720, 360, 20, 20);
+    // Character #2
+    fill(183, 74, 255);
+    ellipse(730, 380, 75, 120);
+    
+    // eyes
+    fill(255);
+    ellipse(700, 360, 20, 20);
+    ellipse(720, 360, 20, 20);
 
-  fill(0);
-  ellipse(695, 355, 5, 5);
-  ellipse(715, 355, 5, 5);
+    fill(0);
+    ellipse(695, 355, 5, 5);
+    ellipse(715, 355, 5, 5);
 
-  // mouth 
-  fill(255, 42, 38);
-  textSize(50);
-  text("_", 700, 400);
+    // mouth 
+    fill(255, 42, 38);
+    textSize(50);
+    text("_", 700, 400);
 
     if(key == 'm'){
       instructionScreen = false;
@@ -296,9 +296,7 @@ public class Sketch extends PApplet {
       }
   }
   
-  public void minionScreen()
-  {
-  
+  public void minionScreen(){
     background(0);
     fill(255);
     textSize(30);
@@ -308,11 +306,11 @@ public class Sketch extends PApplet {
     textSize(30);
     text("Click anywhere to begin!", 10, 430);
 
-  // Character #1
+    // Character #1
     fill(49, 181, 222);
     ellipse(width/4, height/3, width/5, height/2);
   
-  // eyes
+    // eyes
     fill(255);
     ellipse(175, 120, 40, 40);
     ellipse(230, 120, 40, 40);
@@ -321,16 +319,16 @@ public class Sketch extends PApplet {
     ellipse(175, 120, 20, 20);
     ellipse(230, 120, 20, 20);
 
-  // mouth 
+    // mouth 
     fill(255, 42, 38);
     textSize(75);
     text("~", 180, 230);
 
-  // Character #2
+    // Character #2
     fill(255, 143, 205);
     ellipse(width/2, height/3,  width/5, height/2);
 
-  // eyes
+    // eyes
     fill(255);
     ellipse(400, 120, 40, 40);
     ellipse(450, 120, 40, 40);
@@ -339,16 +337,16 @@ public class Sketch extends PApplet {
     ellipse(400, 120, 20, 20);
     ellipse(450, 120, 20, 20);
 
-  // mouth
+    // mouth
     fill(255, 42, 38);
     textSize(50);
     text("O", 400, 230);
 
-  // Character #3
+    // Character #3
     fill(183, 74, 255);
     ellipse(600, height/3, width/5, height/2);
 
-  // eyes
+    // eyes
     fill(255);
     ellipse(620, 120, 40, 40);
     ellipse(580, 120, 40, 40);
@@ -357,18 +355,18 @@ public class Sketch extends PApplet {
     ellipse(620, 120, 20, 20);
     ellipse(580, 120, 20, 20);
 
-  // mouth
+    // mouth
     fill(255, 42, 38);
     textSize(50);
     text("__", 575, 200);
 
-   // Enter Game
-   if (mouseX < width && mouseY < height && mousePressed)
+    // Enter Game
+    if (mouseX < width && mouseY < height && mousePressed)
     {
       Level1OP = true;
       minionScreen = false;
     }
-   }
+  }
 
   public void gameoverScreen(){
     background(0);
@@ -384,21 +382,21 @@ public class Sketch extends PApplet {
   }
   
   public void Level1OP(){
-  background(255);
-  // Level 1 Opening Page
-  fill(0);
-  textSize(75);
-  text("Level 1:", 255, 155);
-  text("Get Passed Evil", 120, 255);
-  text("Loli's Minions!", 160, 325);
+    background(255);
+    // Level 1 Opening Page
+    fill(0);
+    textSize(75);
+    text("Level 1:", 255, 155);
+    text("Get Passed Evil", 120, 255);
+    text("Loli's Minions!", 160, 325);
 
-  // Ready Phrase
-  fill(0);
-  textSize(30);
-  text("press 'p' when ready!", 500, 430);
-  if(key == 'p'){
-    Level1 = true;
-    Level1OP = false;
+    // Ready Phrase
+    fill(0);
+    textSize(30);
+    text("press 'p' when ready!", 500, 430);
+    if(key == 'p'){
+      Level1 = true;
+      Level1OP = false;
     }
   }
 
@@ -420,13 +418,6 @@ public class Sketch extends PApplet {
     if(mouseX > 150 && mouseY > 200 && mouseX < 300 && mouseY < 350 && mousePressed){
       Level2OP = true;
       Level1 = false;
-
-      // Points and Time Bonus
-      /* whenever you click the right box
-      * you get a point. If you also
-      * click the right box fast,
-      * you will get extra points
-      */
       int timeBonus = ((20000 / millis()) * 10);
       points = points + 10 + timeBonus;
     }
@@ -443,23 +434,23 @@ public class Sketch extends PApplet {
   }
 
   public void Level2OP(){  
-  background(255);
-  // Level 2 Opening Page
-  fill(0);
-  textSize(75);
-  text("Level 2:", 250, 155);
-  text("Defeat More Minions!", 50, 305);
+    background(255);
+    // Level 2 Opening Page
+    fill(0);
+    textSize(75);
+    text("Level 2:", 250, 155);
+    text("Defeat More Minions!", 50, 305);
 
-  // Ready Phrase
-  fill(0);
-  textSize(30);
-  text("press 'u' when ready!", 500, 430);
-  if(key == 'u'){
-    Level2OP = false;
-    Level2 = true;
-  }
-  textSize(20);
-  text("Points: " + points, 10, 30);
+    // Ready Phrase
+    fill(0);
+    textSize(30);
+    text("press 'u' when ready!", 500, 430);
+    if(key == 'u'){
+      Level2OP = false;
+      Level2 = true;
+    }
+    textSize(20);
+    text("Points: " + points, 10, 30);
 }
 
   public void Level2(){
@@ -495,30 +486,32 @@ public class Sketch extends PApplet {
   }
 
   public void Level3OP(){
-  background(255);
-  // Level 3 Opening Page
-  fill(0);
-  textSize(75);
-  text("Level 3:", 250, 155);
-  text("Defeat Mini Boss!", 100, 255);
+    background(255);
+    // Level 3 Opening Page
+    fill(0);
+    textSize(75);
+    text("Level 3:", 250, 155);
+    text("Defeat Mini Boss!", 100, 255);
 
-  // Ready Phrase
-  fill(0);
-  textSize(30);
-  text("press 'p' when ready!", 500, 430);
-  if(key == 'p'){
-    Level3OP = false;
-    Level3 = true;
-  }
-  textSize(20);
-  text("Points: " + points, 10, 30);
+    // Ready Phrase
+    fill(0);
+    textSize(30);
+    text("press 'p' when ready!", 500, 430);
+    if(key == 'p'){
+      Level3OP = false;
+      Level3 = true;
+    }
+    textSize(20);
+    text("Points: " + points, 10, 30);
 }
 
   public void Level3(){
-  background(74, 47, 47);
-  // Timer
-  fill(255);
-  text(millis(), 740, 30);
+    background(74, 47, 47);
+    
+    // Timer
+    fill(255);
+    text(millis(), 740, 30);
+
     // Colour Chosen
     fill(53, 2, 54);
     textSize(70);
@@ -584,14 +577,14 @@ public class Sketch extends PApplet {
     textSize(40);
     text("Yellow", 345, 50);
     
-  // box 1
+    // box 1
     rect(50, 100, 200, 200);
     if(mouseX > 50 && mouseY > 100 && mouseX <250 && mouseY < 300 && mousePressed)
       { 
         gameoverScreen = true;
         levelFour = false;
       }
-  // box 2
+    // box 2
     fill(140, 255, 0);
     rect(300, 100, 200, 200);
     if(mouseX > 300 && mouseY > 100 && mouseX < 500 && mouseY < 300 && mousePressed)
@@ -707,14 +700,13 @@ public class Sketch extends PApplet {
 
   public void winScreen()
   {
-
     background(255, 161, 133);
+
     // Background Design
     stroke(255);
     for(int i = 1; i<= 9; i++)
     {
       strokeWeight(i);
-
       int lineX = i * 30;
       line(lineX, 0, lineX, height);
     }
@@ -724,27 +716,28 @@ public class Sketch extends PApplet {
   void drawMinionOne(float bodyX, float bodyY, float bodySize) 
   {
     float bodyDistance = bodySize / 2;
-
     fill(255, 128, 0);
     strokeWeight(0);
-  // body
+
+    // body
     fill(49, 181, 222);
     ellipse(bodyX, bodyY, bodySize*3, bodySize*4);
 
-  // White part of eye (L)
+    // White part of eye (L)
     fill(255);
     ellipse(bodyX - bodyDistance, bodyY - bodyDistance, bodySize/2, bodySize/2);
 
-  // White part of eye (R)
+    // White part of eye (R)
     ellipse(bodyX + bodyDistance, bodyY - bodyDistance, bodySize/2, bodySize/2);
 
-  // Black part of eye (L)
+    // Black part of eye (L)
     fill(0);
     ellipse(bodyX - bodyDistance, bodyY - bodyDistance, bodySize/3, bodySize/3);
 
-  // Black part of eye (R)
+    // Black part of eye (R)
     ellipse(bodyX + bodyDistance, bodyY - bodyDistance, bodySize/3, bodySize/3);
 
+    // Win Screen
     fill(0);
     textSize(100);
     text("You win!", 200, 250);
