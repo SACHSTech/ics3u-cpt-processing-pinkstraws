@@ -27,7 +27,6 @@ public class Sketch2 extends PApplet {
   boolean endScreen;
 
   // Scoreboard
-
   int points = 0;
 
   public void settings() {
