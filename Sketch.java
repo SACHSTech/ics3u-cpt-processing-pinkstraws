@@ -21,7 +21,6 @@ public class Sketch extends PApplet {
   boolean Level3OP;
   boolean Level3;
   boolean minionScreen;
-  boolean gameOverScreen;
   boolean levelFourOP;
   boolean levelFour;
   boolean levelFiveOP;
@@ -104,10 +103,6 @@ public class Sketch extends PApplet {
     else if(winScreen)
     {
       winScreen();
-    }
-    else if(gameOverScreen)
-    {
-      gameOverScreen();
     }
     else if(gameoverScreen){
       gameoverScreen();
@@ -593,7 +588,7 @@ public class Sketch extends PApplet {
     rect(50, 100, 200, 200);
     if(mouseX > 50 && mouseY > 100 && mouseX <250 && mouseY < 300 && mousePressed)
       { 
-        gameOverScreen = true;
+        gameoverScreen = true;
         levelFour = false;
       }
   // box 2
@@ -601,7 +596,7 @@ public class Sketch extends PApplet {
     rect(300, 100, 200, 200);
     if(mouseX > 300 && mouseY > 100 && mouseX < 500 && mouseY < 300 && mousePressed)
       {
-        gameOverScreen = true;
+        gameoverScreen = true;
         levelFour = false;
 
       }
@@ -656,7 +651,7 @@ public class Sketch extends PApplet {
     rect(50, 100, 300, 100);
     if(mouseX > 50  && mouseY > 100 && mouseX < 350 && mouseY < 200 && mousePressed)
     {
-      gameOverScreen = true;
+      gameoverScreen = true;
       levelFive = false;
     }
 
@@ -687,7 +682,7 @@ public class Sketch extends PApplet {
     rect(50, 225, 200, 100);
     if(mouseX > 50  && mouseY > 225 && mouseX < 250 && mouseY < 325 && mousePressed)
     {
-      gameOverScreen = true;
+      gameoverScreen = true;
       levelFive = false;
     }
     // box 4
@@ -695,7 +690,7 @@ public class Sketch extends PApplet {
     rect(300, 225, 200, 100);
     if(mouseX > 300  && mouseY > 225 && mouseX < 500 && mouseY < 325 && mousePressed)
     {
-      gameOverScreen = true;
+      gameoverScreen = true;
       levelFive = false;
     }
     // box 5
@@ -703,26 +698,12 @@ public class Sketch extends PApplet {
     rect(550, 225, 200, 100);
     if(mouseX > 550  && mouseY > 225 && mouseX < 750 && mouseY < 325 && mousePressed)
     {
-      gameOverScreen = true;
+      gameoverScreen = true;
       levelFive = false;
     }
     textSize(20);
     text("Point: "+points, 10, 30);
   }
-
-  public void gameOverScreen()
-  {
-    background(0);
-    fill(55);
-    textSize(70);
-    text("Game Over", 200, 200);
-    textSize(30);
-    text("Press 'm' to go back to menu", 200, 400);
-    if(key == 'm') 
-    {
-      minionScreen();
-    }
-  } 
 
   public void winScreen()
   {
@@ -739,6 +720,7 @@ public class Sketch extends PApplet {
     }
     drawMinionOne(random(width), random(height), random(10, 50));
   }
+  
   void drawMinionOne(float bodyX, float bodyY, float bodySize) 
   {
     float bodyDistance = bodySize / 2;
@@ -795,7 +777,6 @@ public class Sketch extends PApplet {
     textSize(40);
     text("Return to Menu", 410, 350);
   }
-
 
   public void loseScreen() 
   {
