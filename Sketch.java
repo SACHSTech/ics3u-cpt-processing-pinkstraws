@@ -27,6 +27,7 @@ public class Sketch extends PApplet {
   boolean levelFiveOP;
   boolean levelFive;
   boolean winScreen;
+  boolean loseScreen;
 
   // Minion Variables
   float bodyX = 400;
@@ -96,6 +97,9 @@ public class Sketch extends PApplet {
     else if(levelFive)
     {
       levelFive();
+    }
+    else if(loseScreen){
+      loseScreen();
     }
     else if(winScreen)
     {
@@ -620,11 +624,12 @@ public class Sketch extends PApplet {
   {
     background(255);
     fill(0);
-    textSize(75);
-    text("Level 5:", 250, 155);
-    text("Can you beat the ultimate boss?!", 50, 305);
+    textSize(50);
+    text("Level 5:", 260, 155);
+    text("Can you beat the ultimate boss?!", 25, 305);
+    
   
-    textSize(45);
+    textSize(35);
     text("Click the 'q' key when you are ready!", 25, 400);
       
     if(key == 'q')
@@ -665,6 +670,17 @@ public class Sketch extends PApplet {
 
       int timeBonus = ((20000/ millis())*10);
       points = points + 10 + timeBonus;
+
+      if(points >= 160)
+      {
+        winScreen = true;
+        levelFive = false;
+      }
+      else if(points < 160)
+      {
+        loseScreen = true;
+        levelFive = false;
+      }
     }
     // box 3
     fill(255, 115, 0);
@@ -710,6 +726,7 @@ public class Sketch extends PApplet {
 
   public void winScreen()
   {
+
     background(255, 161, 133);
     // Background Design
     stroke(255);
@@ -746,7 +763,6 @@ public class Sketch extends PApplet {
   // Black part of eye (R)
     ellipse(bodyX + bodyDistance, bodyY - bodyDistance, bodySize/3, bodySize/3);
 
-    if(points >= 200){
     fill(0);
     textSize(100);
     text("You win!", 200, 250);
@@ -759,7 +775,7 @@ public class Sketch extends PApplet {
       Level1OP = true;
       winScreen = false;
     }
-    
+
     // Play Again Sign
     fill(255);
     textSize(40);
@@ -779,7 +795,13 @@ public class Sketch extends PApplet {
     textSize(40);
     text("Return to Menu", 410, 350);
   }
-  else if(points < 200){
+
+
+  public void loseScreen() 
+  {
+    if(points < 160){
+    background(0);
+
     fill(255);
     textSize(50);
     text("You Lose!" , 200, 100);
@@ -787,6 +809,7 @@ public class Sketch extends PApplet {
     text("The Evil Loli", 100, 300);
     text("has taken over", 100, 350);
     text("the world!", 100, 400);
+
     // Character #1
     fill(49, 181, 222);
     ellipse(50, 380, 75, 120);
@@ -834,7 +857,7 @@ public class Sketch extends PApplet {
     }
   if(key == 'm'){
     menuScreen = true;
-    winScreen = false;
-  }
+    loseScreen = false;
+    }
   }
 }
