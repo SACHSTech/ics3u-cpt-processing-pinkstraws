@@ -20,7 +20,6 @@ public class Sketch extends PApplet {
   boolean Level2;
   boolean Level3OP;
   boolean Level3;
-  boolean endScreen;
   boolean minionScreen;
   boolean gameOverScreen;
   boolean levelFourOP;
@@ -105,9 +104,6 @@ public class Sketch extends PApplet {
     else if(gameOverScreen)
     {
       gameOverScreen();
-    }
-    else if (endScreen){
-      endScreen();
     }
     else if(gameoverScreen){
       gameoverScreen();
@@ -750,11 +746,12 @@ public class Sketch extends PApplet {
   // Black part of eye (R)
     ellipse(bodyX + bodyDistance, bodyY - bodyDistance, bodySize/3, bodySize/3);
 
-  
+    if(points >= 200){
     fill(0);
     textSize(100);
     text("You win!", 200, 250);
-
+    
+    // Play Again Button
     fill(102);
     rect(75, 310, 250, 50);
     if(mouseX > 75  && mouseY > 310 && mouseX < 325 && mouseY < 360 && mousePressed)
@@ -762,10 +759,13 @@ public class Sketch extends PApplet {
       Level1OP = true;
       winScreen = false;
     }
+
+    // Play Again Sign
     fill(255);
     textSize(40);
     text("Play Again!", 100, 350);
 
+    // Main Menu Button
     fill(102);
     rect(375, 310, 350, 50);
     if(mouseX > 375  && mouseY > 310 && mouseX < 725 && mouseY < 425 && mousePressed)
@@ -774,25 +774,12 @@ public class Sketch extends PApplet {
       winScreen = false;
     }
 
+    // Main menu Sign
     fill(255);
     textSize(40);
     text("Return to Menu", 410, 350);
   }
-  
-
-
-  public void endScreen(){
-  background(0);
-  fill(255);
-  if(points >= 100){
-    textSize(50);
-    text("You Win!" , 200, 100);
-    text("Your score was: " + points, 100, 150);
-    text("Thank you for", 100, 300);
-    text("saving the world", 100, 350);
-    text("from the evil Loli", 100, 400);
-  }
-  else if(points < 100){
+  else if(points < 200){
     fill(255);
     textSize(50);
     text("You Lose!" , 200, 100);
@@ -847,7 +834,7 @@ public class Sketch extends PApplet {
     }
   if(key == 'm'){
     menuScreen = true;
-    endScreen = false;
+    winScreen = false;
   }
   }
 }
