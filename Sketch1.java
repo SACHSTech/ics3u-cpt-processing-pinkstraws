@@ -277,35 +277,62 @@ public class Sketch1 extends PApplet {
 
   public void winScreen()
   {
-    background(0);
-    drawMinionOne(random(width), random(height), random(20, 55));
+    background(255, 161, 133);
+    drawMinionOne(random(width), random(height), random(10, 50));
   }
   
-  void drawMinionOne(float flowerX, float flowerY, float petalSize) 
+  void drawMinionOne(float bodyX, float bodyY, float bodySize) 
   {
-    float petalDistance = petalSize / 2;
+    float bodyDistance = bodySize / 2;
 
     fill(255, 128, 0);
 
-  // upper-left petal
-    ellipse(flowerX - petalDistance, flowerY - petalDistance, petalSize, petalSize);
-
-  // upper-right petal
-    ellipse(flowerX + petalDistance, flowerY - petalDistance, petalSize, petalSize);
-
-  // lower-left petal
-    ellipse(flowerX - petalDistance, flowerY + petalDistance, petalSize, petalSize);
-
-  // lower-right petal
-    ellipse(flowerX + petalDistance, flowerY + petalDistance, petalSize, petalSize);
-
-  // center petal
+  // body
     fill(49, 181, 222);
-    ellipse(bodyX, bodyY, bodySize, bodySize);
+    ellipse(bodyX, bodyY, bodySize*3, bodySize*4);
+
+  // White part of eye (L)
+    fill(255);
+    ellipse(bodyX - bodyDistance, bodyY - bodyDistance, bodySize/2, bodySize/2);
+
+  // White part of eye (R)
+    ellipse(bodyX + bodyDistance, bodyY - bodyDistance, bodySize/2, bodySize/2);
+
+  // Black part of eye (L)
+    fill(0);
+    ellipse(bodyX - bodyDistance, bodyY - bodyDistance, bodySize/3, bodySize/3);
+
+  // Black part of eye (R)
+    ellipse(bodyX + bodyDistance, bodyY - bodyDistance, bodySize/3, bodySize/3);
+
   
     fill(255);
     textSize(100);
     text("You win!", 200, 250);
+
+    fill(102);
+    rect(75, 310, 250, 50);
+    if(mouseX > 75  && mouseY > 310 && mouseX < 325 && mouseY < 125 && mousePressed)
+    {
+      levelFourOP = true;
+      winScreen = false;
+    }
+
+    fill(255);
+    textSize(40);
+    text("Play Again!", 100, 350);
+
+    fill(102);
+    rect(375, 310, 350, 50);
+    if(mouseX > 375  && mouseY > 310 && mouseX < 725 && mouseY < 425 && mousePressed)
+    {
+      minionScreen = true;
+      winScreen = false;
+    }
+
+    fill(255);
+    textSize(40);
+    text("Return to Menu", 410, 350);
   }
 }
 
